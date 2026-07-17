@@ -1,0 +1,32 @@
+{
+  "name": "cecytem-aculco",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sitio web institucional del CECyTEM Plantel Aculco - Colegio de Estudios Científicos y Tecnológicos del Estado de México",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "echo 'Sin linter configurado'"
+  },
+  "keywords": [
+    "cecytem",
+    "aculco",
+    "preparatoria",
+    "educacion",
+    "estado-de-mexico",
+    "programacion",
+    "alimentos"
+  ],
+  "author": "CECyTEM Plantel Aculco",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "sharp": "^0.35.3"
+  }
+}

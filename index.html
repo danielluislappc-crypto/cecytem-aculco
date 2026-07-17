@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+  ===================================================
+  METADATOS BÁSICOS DEL DOCUMENTO
+  
+  Configuración inicial del documento HTML5:
+  - Codificación UTF-8 para caracteres en español
+  - Viewport responsive para dispositivos móviles
+  - Compatibilidad con IE=edge
+  ===================================================
+  -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+  ===================================================
+  SEO - METADATOS PARA MOTORES DE BÚSQUEDA
+  
+  Información clave para mejorar el posicionamiento
+  en Google y otros buscadores.
+  ===================================================
+  -->
+  <title>CECyTEM Plantel Aculco | Colegio de Estudios Científicos y Tecnológicos del Estado de México</title>
+  <meta name="description" content="CECyTEM Plantel Aculco - Preparatoria bivalente pública en Aculco de Espinoza, Estado de México. Ofrecemos las carreras de Técnico en Programación y Técnico en Producción Industrial de Alimentos.">
+  <meta name="keywords" content="CECyTEM, Aculco, preparatoria, Estado de México, programación, alimentos, educación, bivalente, técnico">
+  <meta name="author" content="CECyTEM Plantel Aculco">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.cecytem-aculco.edu.mx/">
+
+  <!--
+  ===================================================
+  OPEN GRAPH - COMPARTIR EN REDES SOCIALES
+  
+  Configuración para que al compartir el enlace en
+  Facebook, WhatsApp, Twitter, etc., se muestre
+  correctamente la información del plantel.
+  ===================================================
+  -->
+  <meta property="og:title" content="CECyTEM Plantel Aculco">
+  <meta property="og:description" content="Preparatoria bivalente pública en Aculco de Espinoza, Estado de México. Formación técnica de calidad.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cecytem-aculco.edu.mx/">
+  <!-- TODO: Agregar URL real de la imagen OG -->
+  <meta property="og:image" content="/assets/img/plantel.jpg">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="CECyTEM Plantel Aculco">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CECyTEM Plantel Aculco">
+  <meta name="twitter:description" content="Preparatoria bivalente pública en Aculco de Espinoza, Estado de México.">
+  <!-- TODO: Agregar URL real de la imagen Twitter -->
+  <meta name="twitter:image" content="/assets/img/plantel.jpg">
+
+  <!--
+  ===================================================
+  FAVICON - ÍCONO DEL SITIO
+  Íconos que aparecen en la pestaña del navegador.
+  Los archivos deben colocarse en /public/favicon/
+  ===================================================
+  -->
+  <!-- Favicon -->
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/img/logo-aculco.jpeg" />
+<link rel="apple-touch-icon" href="assets/img/logo-aculco.jpeg" />apple-touch-icon.png?v=99" />
+  <!--
+  ===================================================
+  FUENTES DE GOOGLE
+  
+  Importamos Poppins y Montserrat para tipografía
+  profesional y legible en todo el sitio.
+  ===================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!--
+  ===================================================
+  BOOTSTRAP 5 - CSS
+  
+  Framework CSS para diseño responsive y componentes.
+  Se carga desde node_modules vía Vite.
+  ===================================================
+  -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!--
+  ===================================================
+  BOOTSTRAP ICONS
+  
+  Biblioteca de íconos SVG oficial de Bootstrap.
+  Usada en todo el sitio para iconografía.
+  ===================================================
+  -->
+  <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!--
+  ===================================================
+  HOJA DE ESTILOS PERSONALIZADA
+  
+  Estilos propios del sitio CECyTEM Aculco.
+  Se carga después de Bootstrap para poder sobrescribir.
+  ===================================================
+  -->
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+
+  <!--
+  ===================================================
+  BARRA DE NAVEGACIÓN PRINCIPAL
+  
+  Navbar fijo en la parte superior con:
+  - Logo institucional
+  - Menú principal con anclas a cada sección
+  - Botón de modo oscuro
+  - Menú responsive (hamburguesa) en móviles
+  
+  Componente Bootstrap: Navbar con collapse
+  ===================================================
+  -->
+  <header>
+   <!-- Barra superior informativa -->
+<div class="top-bar bg-dark text-white py-2 d-none d-md-block">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Columna izquierda: Teléfono y correo -->
+      <div class="col-md-6">
+        <small>
+          <i class="bi bi-telephone-fill me-2"></i>
+          <span>718 124 05 20</span>
+          <i class="bi bi-envelope-fill ms-3 me-2"></i>
+          <span>plantel.aculco@cecytem.mx</span>
+        </small>
+      </div>
+      
+      <!-- Columna derecha: Redes sociales -->
+      <div class="col-md-6 text-end">
+        <small>
+          <a href="#" class="text-white me-3" aria-label="Facebook" data-bs-toggle="tooltip" title="Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="text-white me-3" aria-label="Instagram" data-bs-toggle="tooltip" title="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="#" class="text-white me-3" aria-label="Twitter" data-bs-toggle="tooltip" title="Twitter">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="#" class="text-white" aria-label="Google Maps" data-bs-toggle="tooltip" title="Ubicación">
+            <i class="bi bi-geo-alt-fill"></i>
+          </a>
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Navbar principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+  <div class="container">
+    <!-- Brand / Logo Area -->
+    <a class="navbar-brand d-flex align-items-center" href="#inicio">
+      
+      <!-- 1. Logo Estático del Plantel -->
+      <img src="assets/img/logocecy.jpg" alt="Logo CECyTEM" class="navbar-logo me-2">
+      
+      <!-- 2. Mascota Animada (Video) -->
+      <!-- 'muted' es OBLIGATORIO para que funcione autoplay en Chrome/Safari -->
+      <video 
+        id="cecyto-nav-video"
+        class="navbar-mascot-video" 
+        src="assets/img/cecytoooo.mp4" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        aria-label="Mascota Cecyto animada">
+      </video>
+      
+      <!-- 3. Texto del Brand -->
+      <div class="brand-text ms-2">
+        <span class="brand-title fw-bold">CECyTEM</span>
+        <span class="brand-subtitle d-block small">Plantel Aculco</span>
+      </div>
+    </a>
+
+    <!-- Botón hamburguesa para móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú de enlaces -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Oferta Educativa</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#programacion">Programación</a></li>
+            <li><a class="dropdown-item" href="#alimentos">Alimentos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#instalaciones">Instalaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+      
+      <!-- Botón Modo Oscuro (si lo tienes) -->
+      <button id="darkModeToggle" class="btn btn-outline-light ms-3 rounded-circle p-2">
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+  </header>
+
+  <!--
+  ===================================================
+  SECCIÓN HERO - BIENVENIDA
+  
+  Primera impresión del sitio. Muestra:
+  - Imagen de fondo del plantel
+  - Mensaje institucional principal
+  - Botón CTA para conocer las carreras
+  - Indicadores rápidos (alumnos, docentes, etc.)
+  
+  Componente Bootstrap: Carousel (para múltiples slides)
+  ===================================================
+  -->
+  <section id="inicio" class="hero-section">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+      <!-- Indicadores del carrusel -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Slides del carrusel -->
+      <div class="carousel-inner">
+        <!-- Slide 1 - Bienvenida -->
+        <div class="carousel-item active">
+          <!-- TODO: Colocar imagen real del plantel en /assets/img/hero-bg.jpg -->
+          <img src="assets/img/fachada.jpeg" class="d-block w-100 hero-img" alt="Fachada del CECyTEM Plantel Aculco">
+          <div class="carousel-caption hero-caption">
+            <div class="container">
+              <span class="hero-badge">Colegio de Estudios Científicos y Tecnológicos</span>
+              <h1 class="hero-title display-3 fw-bold">CECyTEM Plantel Aculco</h1>
+              <p class="hero-lead lead">Formación técnica de calidad para construir el futuro del Estado de México</p>
+              <div class="hero-buttons">
+                <a href="#oferta" class="btn btn-primary btn-lg me-2 mb-2">
+                  <i class="bi bi-mortarboard-fill me-2"></i>Conoce nuestras carreras
+                </a>
+                <a href="#contacto" class="btn btn-outline-light btn-lg mb-2">
+                  <i class="bi bi-envelope-fill me-2"></i>Contáctanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 - Oferta educativa -->
+        <div class="carousel-item">
+          <!-- TODO: Colocar imagen real de laboratorio o aula -->
+          <img src="assets/img/postu.jpeg" class="d-block w-100 hero-img" alt="Laboratorio del plantel">
+          <div class="carousel-caption hero-caption">
+            <div class="container">
+              <span class="hero-badge">Cultura</span>
+              <h1 class="hero-title display-4 fw-bold">Eventos culturales</h1>
+              <p class="hero-lead lead">Postulacion a reina de las fiestas patrias en aculco</p>
+              <a href="#oferta" class="btn btn-primary btn-lg">
+                <i class="bi bi-arrow-right-circle-fill me-2"></i>Ver carreras
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 - Valores -->
+        <div class="carousel-item">
+          <!-- TODO: Colocar imagen real de evento o graduación -->
+          <img src="assets/img/graduacion.jpeg" class="d-block w-100 hero-img" alt="Evento de graduación">
+          <div class="carousel-caption hero-caption">
+            <div class="container">
+              <span class="hero-badge">Excelencia Educativa</span>
+              <h1 class="hero-title display-4 fw-bold">Educación que transforma vidas</h1>
+              <p class="hero-lead lead">Comprometidos con la formación integral de nuestros estudiantes</p>
+              <a href="#nosotros" class="btn btn-primary btn-lg">
+                <i class="bi bi-info-circle-fill me-2"></i>Conócenos
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+    <!-- Indicadores rápidos (estadísticas) -->
+    <div class="stats-bar">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <i class="bi bi-people-fill stat-icon"></i>
+              <!-- TODO: Colocar número real de alumnos -->
+              <h3 class="stat-number" data-count="350">0</h3>
+              <p class="stat-label">Alumnos</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <i class="bi bi-person-workspace stat-icon"></i>
+              <!-- TODO: Colocar número real de docentes -->
+              <h3 class="stat-number" data-count="12">0</h3>
+              <p class="stat-label">Docentes</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <i class="bi bi-book-fill stat-icon"></i>
+              <h3 class="stat-number" data-count="2">0</h3>
+              <p class="stat-label">Carreras Técnicas</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <i class="bi bi-trophy-fill stat-icon"></i>
+              <!-- TODO: Colocar años reales del plantel -->
+              <h3 class="stat-number" data-count="30">0</h3>
+              <p class="stat-label">Años de trayectoria</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  ===================================================
+  SECCIÓN SOBRE NOSOTROS
+  
+  Presenta la historia, objetivo, compromiso y valores
+  del plantel. Diseño con tarjetas e iconos.
+  
+  Componentes Bootstrap: Cards, Accordion
+  ===================================================
+  -->
+  <section id="nosotros" class="section-padding bg-light">
+    <div class="container">
+      <!-- Encabezado de sección -->
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Conócenos</span>
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <p class="section-subtitle">Una institución comprometida con la excelencia educativa y la formación integral de jóvenes del municipio de Aculco</p>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="row align-items-center g-5">
+        <!-- Columna de imagen -->
+        <div class="col-lg-6">
+          <div class="about-image-wrapper">
+            <!-- TODO: Colocar imagen real de la fachada en /assets/img/fachada.jpg -->
+            <img src="assets/img/fachada.jpeg" alt="Fachada del CECyTEM Plantel Aculco" class="img-fluid rounded-4 shadow-lg about-main-img">
+            <div class="about-badge bg-primary text-white p-4 rounded-4 shadow">
+              <h3 class="fw-bold mb-0">+30</h3>
+              <p class="mb-0 small">Años formando técnicos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de información -->
+        <div class="col-lg-6">
+          <h3 class="fw-bold mb-3 text-primary">CECyTEM Plantel Aculco</h3>
+          <p class="lead mb-4">
+            El Colegio de Estudios Científicos y Tecnológicos del Estado de México, Plantel Aculco, es una institución educativa pública de nivel medio superior que ofrece formación bivalente: bachillerato tecnológico combinado con una carrera técnica especializada.
+          </p>
+          <p class="mb-4">
+            Ubicado en el municipio de Aculco de Espinoza, en el Estado de México, nuestro plantel se ha consolidado como una opción educativa de calidad para los jóvenes de la región noroccidente del estado, brindando herramientas académicas y técnicas que les permiten insertarse en el mercado laboral o continuar estudios superiores.
+          </p>
+
+          <!-- Valores en tarjetas pequeñas -->
+          <div class="row g-3 mt-3">
+            <div class="col-md-6">
+              <div class="value-card d-flex align-items-start p-3 rounded-3">
+                <i class="bi bi-bullseye fs-2 text-primary me-3"></i>
+                <div>
+                  <h5 class="mb-1">Compromiso</h5>
+                  <p class="mb-0 small text-muted">Con la educación de calidad</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="value-card d-flex align-items-start p-3 rounded-3">
+                <i class="bi bi-lightbulb-fill fs-2 text-primary me-3"></i>
+                <div>
+                  <h5 class="mb-1">Innovación</h5>
+                  <p class="mb-0 small text-muted">Tecnología al servicio del aprendizaje</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="value-card d-flex align-items-start p-3 rounded-3">
+                <i class="bi bi-shield-check fs-2 text-primary me-3"></i>
+                <div>
+                  <h5 class="mb-1">Integridad</h5>
+                  <p class="mb-0 small text-muted">Valores éticos y humanos</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="value-card d-flex align-items-start p-3 rounded-3">
+                <i class="bi bi-people-fill fs-2 text-primary me-3"></i>
+                <div>
+                  <h5 class="mb-1">Comunidad</h5>
+                  <p class="mb-0 small text-muted">Pertenencia e identidad institucional</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Misión, Visión y Objetivos en Acordeón -->
+      <div class="row mt-5">
+        <div class="col-lg-12">
+          <div class="accordion accordion-custom" id="accordionMVV">
+            <!-- Misión -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingMision">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMision" aria-expanded="true" aria-controls="collapseMision">
+                  <i class="bi bi-bullseye me-2 text-primary"></i>
+                  <strong>Nuestra Misión</strong>
+                </button>
+              </h2>
+              <div id="collapseMision" class="accordion-collapse collapse show" aria-labelledby="headingMision" data-bs-parent="#accordionMVV">
+                <div class="accordion-body">
+                  <p>
+Impartir educación media superior de calidad, en su modalidad de bachillerato tecnológico bivalente, con el objeto de que los egresados cuenten con educación tecnológica terminal que les permita incorporarse a una actividad productiva, o bien, continuar sus estudios de nivel superior.                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visión -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingVision">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVision" aria-expanded="false" aria-controls="collapseVision">
+                  <i class="bi bi-eye-fill me-2 text-primary"></i>
+                  <strong>Nuestra Visión</strong>
+                </button>
+              </h2>
+              <div id="collapseVision" class="accordion-collapse collapse" aria-labelledby="headingVision" data-bs-parent="#accordionMVV">
+                <div class="accordion-body">
+                  <p>
+Ser la mejor opción en educación media superior en su modalidad de bachillerato tecnológico bivalente en el Sistema Nacional de los CECyTE’s, así como en el Estado de México.                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Objetivos -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingObjetivos">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObjetivos" aria-expanded="false" aria-controls="collapseObjetivos">
+                  <i class="bi bi-flag-fill me-2 text-primary"></i>
+                  <strong>Nuestros Objetivos</strong>
+                </button>
+              </h2>
+              <div id="collapseObjetivos" class="accordion-collapse collapse" aria-labelledby="headingObjetivos" data-bs-parent="#accordionMVV">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Impartir educación media superior terminal, terminal por convenio y bivalente de carácter tecnológico.</li>
+                    <li>Promover un mejor aprovechamiento social de los recursos naturales y contribuir a su utilización racional.</li>
+                    <li>Reforzar el proceso de enseñanza-aprendizaje con actividades curriculares y extracurriculares debidamente planeadas y ejecutadas.</li>
+                    <li>Promover y difundir la actitud crítica derivada de la verdad científica, la previsión y búsqueda del futuro con base en el objeto de nuestra realidad y valores nacionales.</li>
+                    <li>Promover la cultura estatal, nacional y universal, especialmente la de carácter tecnológico.</li>
+                    <li>Realizar programas de vinculación con los sectores público, privado y social que contribuyan a la consolidación del desarrollo tecnológico y social de ser humano.</li>
+                    <li>Elevar la calidad educativa de forma permanente.</li>
+                    <li>Ampliar la cobertura social y territorial en favor de la juventud del Estado de México. </li>
+                    <li>Innovar y diversificar la oferta educativa.</li>
+
+
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  ===================================================
+  SECCIÓN OFERTA EDUCATIVA
+  
+  Presenta las dos carreras técnicas del plantel:
+  - Técnico en Programación
+  - Técnico en Producción Industrial de Alimentos
+  
+  Cada carrera tiene su tarjeta con imagen, descripción,
+  competencias, campo laboral y habilidades.
+  
+  Componentes Bootstrap: Cards, Tabs, Badges
+  ===================================================
+  -->
+  <section id="oferta" class="section-padding">
+    <div class="container">
+      <!-- Encabezado de sección -->
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Oferta Educativa</span>
+        <h2 class="section-title">Nuestras Carreras Técnicas</h2>
+        <p class="section-subtitle">Formación bivalente que combina bachillerato general con una carrera técnica especializada</p>
+      </div>
+
+      <!-- Tarjetas de carreras -->
+      <div class="row g-4">
+        <!-- Carrera 1: Programación -->
+        <div id="programacion" class="col-lg-6">
+          <div class="career-card card h-100 border-0 shadow-sm">
+            <div class="career-card-img-wrapper">
+              <!-- TODO: Colocar imagen real de programación en /assets/img/programacion.jpg -->
+              <img src="assets/img/programacion.png" class="card-img-top" alt="Estudiantes programando en sala de cómputo">
+              <span class="career-badge bg-primary">
+                <i class="bi bi-code-slash"></i>
+              </span>
+            </div>
+            <div class="card-body p-4">
+              <h3 class="card-title fw-bold text-primary">Técnico en Programación</h3>
+              <p class="card-text text-muted">
+                Forma profesionales capaces de analizar, diseñar, desarrollar, instalar y mantener sistemas de software que respondan a las necesidades del usuario y del sector productivo, utilizando lenguajes de programación modernos y metodologías de desarrollo actuales.
+              </p>
+
+              <!-- Tabs con información detallada -->
+              <ul class="nav nav-pills mb-3" id="tabProg" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="prog-comp-tab" data-bs-toggle="pill" data-bs-target="#prog-comp" type="button" role="tab">Competencias</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="prog-campo-tab" data-bs-toggle="pill" data-bs-target="#prog-campo" type="button" role="tab">Campo Laboral</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="prog-hab-tab" data-bs-toggle="pill" data-bs-target="#prog-hab" type="button" role="tab">Habilidades</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="prog-cert-tab" data-bs-toggle="pill" data-bs-target="#prog-cert" type="button" role="tab">Certificaciones</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="tabProgContent">
+                <!-- Competencias -->
+                <div class="tab-pane fade show active" id="prog-comp" role="tabpanel">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Analizar requerimientos de software</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Diseñar aplicaciones y sistemas</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Programar en diversos lenguajes</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Instalar y configurar software</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dar mantenimiento a aplicaciones</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Desarrollar proyectos tecnológicos</li>
+                  </ul>
+                </div>
+                <!-- Campo laboral -->
+                <div class="tab-pane fade" id="prog-campo" role="tabpanel">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Empresas de desarrollo de software</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Departamentos de TI</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Soporte técnico especializado</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Desarrollo web y móvil</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Emprendimiento tecnológico</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Estudios superiores en informática</li>
+                  </ul>
+                </div>
+                <!-- Habilidades -->
+                <div class="tab-pane fade" id="prog-hab" role="tabpanel">
+                  <div class="mb-2">
+                    <small class="text-muted">HTML, CSS, JavaScript</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 90%"></div></div>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted">Python, Java, C#</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 80%"></div></div>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted">Bases de datos SQL</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 75%"></div></div>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted">Desarrollo web</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 85%"></div></div>
+                  </div>
+                </div>
+                <!-- Certificaciones -->
+                <div class="tab-pane fade" id="prog-cert" role="tabpanel">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">Microsoft Technology Associate (MTA)</strong>
+                        <small class="text-muted d-block">Fundamentos de programación en Python o Java.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio</span>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">Oracle Certified Associate - Java</strong>
+                        <small class="text-muted d-block">Certificación oficial de Oracle en programación Java SE.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio-Avanzado</span>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">AWS Certified Cloud Practitioner</strong>
+                        <small class="text-muted d-block">Fundamentos de computación en la nube con Amazon Web Services.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Básico-Intermedio</span>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">Google IT Automation with Python</strong>
+                        <small class="text-muted d-block">Certificación profesional en automatización de procesos con Python.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio</span>
+                      </div>
+                    </li>
+                    <li class="mb-0 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">Cisco Certified Network Associate</strong>
+                        <small class="text-muted d-block">Fundamentos de redes y conectividad para desarrolladores.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pb-4 px-4">
+              <a href="#contacto" class="btn btn-primary w-100">
+                <i class="bi bi-info-circle me-2"></i>Más información
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrera 2: Producción Industrial de Alimentos -->
+        <div id="alimentos" class="col-lg-6">
+          <div class="career-card card h-100 border-0 shadow-sm">
+            <div class="career-card-img-wrapper">
+              <!-- TODO: Colocar imagen real en /assets/img/alimentos.jpg -->
+              <img src="assets/img/alimentos.png" class="card-img-top" alt="Laboratorio de producción industrial de alimentos">
+              <span class="career-badge bg-primary">
+                <i class="bi bi-cup-hot"></i>
+              </span>
+            </div>
+            <div class="card-body p-4">
+              <h3 class="card-title fw-bold text-primary">Técnico en Producción Industrial de Alimentos</h3>
+              <p class="card-text text-muted">
+                Forma profesionales capaces de procesar, conservar y transformar materias primas alimentarias (frutas, verduras, cereales, carnes, lácteos y sus derivados) aplicando procesos industriales, controles de calidad y buenas prácticas de manufactura para garantizar la inocuidad alimentaria.
+              </p>
+
+              <!-- Tabs con información detallada -->
+              <ul class="nav nav-pills mb-3" id="tabAlim" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="alim-comp-tab" data-bs-toggle="pill" data-bs-target="#alim-comp" type="button" role="tab">Competencias</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="alim-campo-tab" data-bs-toggle="pill" data-bs-target="#alim-campo" type="button" role="tab">Campo Laboral</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="alim-hab-tab" data-bs-toggle="pill" data-bs-target="#alim-hab" type="button" role="tab">Habilidades</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="alim-cert-tab" data-bs-toggle="pill" data-bs-target="#alim-cert" type="button" role="tab">Certificaciones</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="tabAlimContent">
+                <!-- Competencias -->
+                <div class="tab-pane fade show active" id="alim-comp" role="tabpanel">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Procesar alimentos industrialmente</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Conservar alimentos de forma segura</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Manejar frutas, verduras y cereales</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Transformar carnes y lácteos</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Aplicar control de calidad</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Garantizar inocuidad alimentaria</li>
+                  </ul>
+                </div>
+                <!-- Campo laboral -->
+                <div class="tab-pane fade" id="alim-campo" role="tabpanel">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Industria alimentaria</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Plantas procesadoras</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Laboratorios de control de calidad</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Empresas lácteas y cárnicas</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Emprendimiento alimentario</li>
+                    <li class="mb-2"><i class="bi bi-briefcase-fill text-primary me-2"></i>Estudios superiores en alimentos</li>
+                  </ul>
+                </div>
+                <!-- Habilidades -->
+                <div class="tab-pane fade" id="alim-hab" role="tabpanel">
+                  <div class="mb-2">
+                    <small class="text-muted">Procesamiento de alimentos</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 90%"></div></div>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted">Control de calidad</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 85%"></div></div>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted">Buenas prácticas de manufactura</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 88%"></div></div>
+                  </div>
+                  <div class="mb-2">
+                    <small class="text-muted">Inocuidad alimentaria</small>
+                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 82%"></div></div>
+                  </div>
+                </div>
+                <!-- Certificaciones -->
+                <div class="tab-pane fade" id="alim-cert" role="tabpanel">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">HACCP (Análisis de Peligros)</strong>
+                        <small class="text-muted d-block">Sistema de gestión de inocuidad alimentaria reconocido internacionalmente.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio</span>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">ISO 22000 - Seguridad Alimentaria</strong>
+                        <small class="text-muted d-block">Norma internacional para sistemas de gestión de inocuidad.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio-Avanzado</span>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">BPM (Buenas Prácticas de Manufactura)</strong>
+                        <small class="text-muted d-block">Certificación en prácticas higiénicas para la industria alimentaria.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Básico-Intermedio</span>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">FDA Food Safety Modernization Act</strong>
+                        <small class="text-muted d-block">Normativa estadounidense de seguridad alimentaria moderna.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Intermedio</span>
+                      </div>
+                    </li>
+                    <li class="mb-0 d-flex align-items-start">
+                      <i class="bi bi-patch-check-fill text-primary me-2 mt-1 fs-5"></i>
+                      <div>
+                        <strong class="d-block text-dark">Auditor Interno en Inocuidad Alimentaria</strong>
+                        <small class="text-muted d-block">Formación para auditar sistemas de gestión de calidad alimentaria.</small>
+                        <span class="badge bg-primary bg-opacity-10 text-primary mt-1" style="font-size: 0.75rem;">Nivel: Avanzado</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 pb-4 px-4">
+              <a href="#contacto" class="btn btn-primary w-100">
+                <i class="bi bi-info-circle me-2"></i>Más información
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      ===================================================
+      TABLA COMPARATIVA DE CARRERAS
+      
+      Requisito del estándar EC0727 - Tabla HTML
+      Permite comparar ambas carreras de forma visual.
+      ===================================================
+      -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-primary mb-4">
+                <i class="bi bi-table me-2"></i>Comparativo de Carreras
+              </h4>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                  <thead class="table-primary">
+                    <tr>
+                      <th scope="col">Aspecto</th>
+                      <th scope="col">Técnico en Programación</th>
+                      <th scope="col">Técnico en Producción Industrial de Alimentos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Enfoque</th>
+                      <td>Desarrollo de software y sistemas</td>
+                      <td>Procesamiento industrial de alimentos</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Área</th>
+                      <td>Tecnologías de la información</td>
+                      <td>Ciencias agroalimentarias</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Duración</th>
+                      <td>3 años (junto con bachillerato)</td>
+                      <td>3 años (junto con bachillerato)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Prácticas</th>
+                      <td>Salas de cómputo y proyectos</td>
+                      <td>Laboratorio de alimentos</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Salida principal</th>
+                      <td>Programador / Desarrollador</td>
+                      <td>Técnico en alimentos</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  ===================================================
+  SECCIÓN INSTALACIONES
+  
+  Muestra las instalaciones del plantel mediante
+  tarjetas con imagen, icono y descripción.
+  
+  Componentes Bootstrap: Cards, Grid
+  ===================================================
+  -->
+  <section id="instalaciones" class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Infraestructura</span>
+        <h2 class="section-title">Nuestras Instalaciones</h2>
+        <p class="section-subtitle">Espacios diseñados para ofrecer una experiencia educativa integral y de calidad</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Instalación 1: Salas de cómputo -->
+        <div class="col-md-6 col-lg-4">
+          <div class="facility-card card h-100 border-0 shadow-sm">
+            <div class="facility-img-wrapper">
+              <!-- TODO: Colocar imagen real en /assets/img/computo1.jpg -->
+              <img src="assets/img/computo.jpeg" class="card-img-top facility-img-clickable" alt="Sala de cómputo 1">
+              <span class="facility-icon"><i class="bi bi-pc-display"></i></span>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Salas de Cómputo</h5>
+              <p class="card-text text-muted mb-0">Contamos con dos salas de cómputo equipadas con equipo de última generación para las prácticas de la carrera de Programación y apoyo académico general.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instalación 2: Laboratorio de ciencias -->
+        <div class="col-md-6 col-lg-4">
+          <div class="facility-card card h-100 border-0 shadow-sm">
+            <div class="facility-img-wrapper">
+              <!-- TODO: Colocar imagen real en /assets/img/laboratorio.jpg -->
+              <img src="assets/img/laboratoriodeciencias.jpeg" class="card-img-top facility-img-clickable" alt="Laboratorio de ciencias">
+              <span class="facility-icon"><i class="bi bi-droplet-fill"></i></span>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Laboratorio de Ciencias</h5>
+              <p class="card-text text-muted mb-0">Espacio equipado para prácticas de química, física y biología, donde los estudiantes aplican los conocimientos teóricos de manera experimental.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instalación 3: Laboratorio de alimentos -->
+        <div class="col-md-6 col-lg-4">
+          <div class="facility-card card h-100 border-0 shadow-sm">
+            <div class="facility-img-wrapper">
+              <!-- TODO: Colocar imagen real en /assets/img/alimentos.jpg -->
+              <img src="assets/img/laboratoriodealimentos.jpeg" class="card-img-top facility-img-clickable" alt="Laboratorio de alimentos">
+              <span class="facility-icon"><i class="bi bi-cup-hot-fill"></i></span>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Laboratorio de Alimentos</h5>
+              <p class="card-text text-muted mb-0">Laboratorio especializado en Producción Industrial de Alimentos, con equipo para procesamiento, conservación y control de calidad.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instalación 4: Cafetería -->
+        <div class="col-md-6 col-lg-4">
+          <div class="facility-card card h-100 border-0 shadow-sm">
+            <div class="facility-img-wrapper">
+              <!-- TODO: Colocar imagen real en /assets/img/cafeteria.jpg -->
+              <img src="assets/img/cafeteria11.jpeg" class="card-img-top facility-img-clickable" alt="Cafetería del plantel">
+              <span class="facility-icon"><i class="bi bi-cup-straw"></i></span>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Cafetería</h5>
+              <p class="card-text text-muted mb-0">Área de convivio con servicio de alimentos y bebidas, donde los estudiantes pueden descansar y socializar en un ambiente agradable.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instalación 5: Canchas deportivas -->
+        <div class="col-md-6 col-lg-4">
+          <div class="facility-card card h-100 border-0 shadow-sm">
+            <div class="facility-img-wrapper">
+              <!-- TODO: Colocar imagen real en /assets/img/canchas.jpg -->
+              <img src="assets/img/canchadeportiva.jpeg" class="card-img-top facility-img-clickable" alt="Canchas deportivas">
+              <span class="facility-icon"><i class="bi bi-dribbble"></i></span>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Canchas Deportivas</h5>
+              <p class="card-text text-muted mb-0">Cancha de fútbol rápido y cancha de básquetbol para la práctica deportiva y torneos internos e interplantelares.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instalación 6: Áreas verdes -->
+        <div class="col-md-6 col-lg-4">
+          <div class="facility-card card h-100 border-0 shadow-sm">
+            <div class="facility-img-wrapper">
+              <!-- TODO: Colocar imagen real de áreas verdes -->
+              <img src="assets/img/areaverde.jpeg" class="card-img-top facility-img-clickable" alt="Áreas verdes del plantel">
+              <span class="facility-icon"><i class="bi bi-tree-fill"></i></span>
+            </div>
+            <div class="card-body p-4">
+              <h5 class="card-title fw-bold">Áreas Verdes</h5>
+              <p class="card-text text-muted mb-0">Amplios espacios verdes que fomentan la convivencia, la reflexión y el contacto con la naturaleza dentro del plantel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  ===================================================
+  SECCIÓN ALIADOS ESTRATÉGICOS
+  
+  Muestra las empresas e instituciones con las que
+  el plantel mantiene vínculos.
+  
+  Incluye a ARCOMEX como aliado confirmado.
+  Espacios TODO para futuros aliados.
+  
+  Componentes Bootstrap: Cards, Grid
+  ===================================================
+  -->
+  <section id="aliados" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Vinculación</span>
+        <h2 class="section-title">Aliados Estratégicos</h2>
+        <p class="section-subtitle">Empresas e instituciones con las que mantenemos vínculos para prácticas profesionales, servicio social y fortalecimiento académico</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Aliado confirmado: ARCOMEX -->
+        <div class="col-md-4 col-lg-3">
+          <div class="ally-card card h-100 border-0 shadow-sm text-center p-4">
+            <div class="ally-logo-wrapper">
+              <!-- TODO: Colocar logotipo real de ARCOMEX en /assets/img/aliados/arcomex.png -->
+              <img src="assets/img/arcomex.png" alt="Logotipo de ARCOMEX" class="img-fluid ally-logo" onerror="this.style.display='none'">
+              <i class="bi bi-building fs-1 text-primary" style="display:none"></i>
+            </div>
+            <h5 class="fw-bold mt-3">ARCOMEX</h5>
+            <p class="text-muted small mb-0">Aliado estratégico para prácticas profesionales</p>
+          </div>
+        </div>
+
+        <!-- Espacios para futuros aliados -->
+        <div class="col-md-4 col-lg-3">
+          <div class="ally-card card h-100 border-0 shadow-sm text-center p-4">
+            <div class="ally-logo-wrapper">
+              <!-- TODO: Colocar logotipo real del aliado 2 en /assets/img/aliados/aliado2.png -->
+              <img src="assets/img/sep.png" alt="Logotipo aliado 2" class="img-fluid ally-logo" onerror="this.style.display='none'">
+              
+            </div>
+            <h5 class="fw-bold mt-3">SEP</h5>
+            <p class="text-muted small mb-0">La Secretaría de Educación Pública (SEP) es la institución del gobierno mexicano encargada de administrar la educación preescolar, primaria, secundaria, media superior y superior en todo el país. Su propósito principal es garantizar un sistema educativo incluyente, equitativo y gratuito para todos los estudiantes</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <div class="ally-card card h-100 border-0 shadow-sm text-center p-4">
+            <div class="ally-logo-wrapper">
+              <!-- TODO: Colocar logotipo real del aliado 3 en /assets/img/aliados/aliado3.png -->
+              <img src="assets/img/aculco.png" alt="Logotipo aliado 3" class="img-fluid ally-logo" onerror="this.style.display='none'">
+              
+            </div>
+            <h5 class="fw-bold mt-3">Ayuntamiento Aculco</h5>
+            <p class="text-muted small mb-0">Gobierno Municipal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  ===================================================
+  SECCIÓN GALERÍA
+  
+  Galería responsive con filtro por categorías.
+  Implementa lightbox al hacer clic en las imágenes.
+  
+  Componentes Bootstrap: Grid, Modal (para lightbox)
+  ===================================================
+  -->
+  <section id="galeria" class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Momentos</span>
+        <h2 class="section-title">Galería Fotográfica</h2>
+        <p class="section-subtitle">Revive los mejores momentos de nuestra comunidad estudiantil</p>
+      </div>
+
+      <!-- Filtros de galería -->
+      <div class="gallery-filters text-center mb-4">
+        <button class="btn btn-filter active" data-filter="all">Todas</button>
+        <button class="btn btn-filter" data-filter="instalaciones">Instalaciones</button>
+        <button class="btn btn-filter" data-filter="eventos">Eventos</button>
+        <button class="btn btn-filter" data-filter="academico">Académico</button>
+        <button class="btn btn-filter" data-filter="deportes">Deportes</button>
+      </div>
+
+      <!-- Grid de galería -->
+      <div class="row g-3" id="galleryGrid">
+        <!-- Imagen 1 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="instalaciones">
+          <div class="gallery-img-wrapper">
+            <!-- TODO: Colocar imagen real -->
+            <img src="assets/img/fachada.jpeg" alt="Fachada del plantel" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in"></i>
+            </div>
+          </div>
+        </div>
+        <!-- Imagen 2 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="academico">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/computo.jpeg" alt="Sala de cómputo" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+        <!-- Imagen 3 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="academico">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/laboratorio.jpeg" alt="Laboratorio" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+        <!-- Imagen 4 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="eventos">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/graduacion.jpeg" alt="Graduación" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+        <!-- Imagen 5 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="instalaciones">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/cafeteria12.jpeg" alt="Cafetería" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+        <!-- Imagen 6 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="deportes">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/canchadeoortivagaleria.jpeg" alt="Canchas deportivas" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+        <!-- Imagen 7 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="academico">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/clasedeprogramacion.jpeg" alt="Clase de programación" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+        <!-- Imagen 8 -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item" data-category="eventos">
+          <div class="gallery-img-wrapper">
+            <img src="assets/img/eventoinstitucional.jpeg" alt="Evento institucional" class="img-fluid gallery-img" loading="lazy">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+        </div>
+      </div>
+
+     
+
+    <!-- Modal Lightbox -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 text-center position-relative">
+        <img src="" id="lightboxImage" class="img-fluid rounded-3" alt="Imagen ampliada" style="max-height: 80vh;">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar" style="z-index: 10;"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!--
+  ===================================================
+  SECCIÓN VIDEO INSTITUCIONAL
+  
+  Iframe con video institucional del plantel.
+  Requisito del estándar EC0727.
+  
+  Componente: iframe HTML5
+  ===================================================
+  -->
+ <section id="video" class="section-padding">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-tag">Multimedia</span>
+      <h2 class="section-title">Video Institucional</h2>
+      <p class="section-subtitle">Conoce más sobre nuestra comunidad educativa</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="video-wrapper shadow-lg rounded-4 overflow-hidden">
+          <video 
+            controls 
+            class="w-100 rounded-4"
+            poster="/assets/img/video-poster.jpg"
+            preload="metadata">
+            <source src="/assets/img/videoinstitucional.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video. Por favor, 
+            <a href="/assets/img/videoinstitucional.mp4" download>descarga el video</a>.
+          </video>
+        </div>
+        <p class="text-center text-muted mt-3 small">
+          <i class="bi bi-info-circle me-1"></i>
+          Video institucional del CECyTEM Plantel Aculco
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!--
+  ===================================================
+  SECCIÓN TESTIMONIOS
+  
+  Opiniones de alumnos, docentes y egresados.
+  Si no hay testimonios reales, se marcan como demo.
+  
+  Componentes Bootstrap: Carousel, Cards
+  ===================================================
+  -->
+  <section id="testimonios" class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Voces</span>
+        <h2 class="section-title">Testimonios</h2>
+        <p class="section-subtitle">Lo que dicen nuestros estudiantes, docentes y egresados</p>
+      </div>
+
+      <div id="testimoniosCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- Testimonio 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card card border-0 shadow-sm p-4 text-center">
+                  <!-- TODO: Reemplazar con foto real de alumno -->
+                  <img src="assets/img/daniel luis .jpeg" alt="Foto de alumno" class="testimonial-img mx-auto" onerror="this.src='https:'">
+                  <i class="bi bi-quote display-4 text-primary"></i>
+                  <p class="testimonial-text fst-italic">
+"Mi paso por la carrera de Programación en el CECyTEM Plantel Aculco me permitió descubrir el potencial de la tecnología para resolver problemas reales. Aprendí a desarrollar aplicaciones, crear sitios web, administrar bases de datos y comprender la lógica detrás de los sistemas informáticos. Además de los conocimientos técnicos, desarrollé habilidades como la disciplina, el trabajo colaborativo y la capacidad de aprender de manera constante. Hoy puedo decir que la formación que recibí me dio una base sólida para continuar mis estudios universitarios y prepararme para los desafíos del mundo laboral. Estoy orgulloso de haber formado parte de esta institución y de todo lo que aprendí durante mi formación."                  </p>
+                  <h5 class="fw-bold mb-0">Daniel Luis Villafuerte</h5>
+                  <small class="text-muted">Egresado - Generación 2023</small>
+                  <span class="badge bg-warning text-dark mt-2">Demostración</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonio 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card card border-0 shadow-sm p-4 text-center">
+                  <img src="assets/img/rosaMartinez.jpeg" alt="Foto de docente" class="testimonial-img mx-auto" onerror="this.src='https:'">
+                  <i class="bi bi-quote display-4 text-primary"></i>
+                  <p class="testimonial-text fst-italic">
+"Como orientadora educativa del CECyTEM Plantel Aculco, mi mayor satisfacción es acompañar a las y los estudiantes en su desarrollo personal, académico y vocacional. Ver cómo fortalecen sus habilidades, descubren su potencial y alcanzan sus metas es una experiencia muy gratificante. Nuestro compromiso es brindarles el apoyo y la orientación necesarios para que tomen decisiones informadas y construyan un futuro exitoso."                  </p>
+                  <h5 class="fw-bold mb-0">Rosa Martinez </h5>
+                  <small class="text-muted">Orientadora</small>
+                  <span class="badge bg-warning text-dark mt-2">Demostración</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonio 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="testimonial-card card border-0 shadow-sm p-4 text-center">
+                  <img src="assets/img/alumna.jpeg" alt="Foto de alumna" class="testimonial-img mx-auto" onerror="this.src='https:'">
+                  <i class="bi bi-quote display-4 text-primary"></i>
+                  <p class="testimonial-text fst-italic">
+"Estudiar la carrera de Producción Industrial de Alimentos en el CECyTEM Plantel Aculco ha sido una experiencia muy enriquecedora. Durante mi formación adquirí conocimientos sobre el procesamiento, conservación e inocuidad de los alimentos, además de desarrollar habilidades prácticas en laboratorio y trabajo en equipo. Cada práctica fortaleció mi confianza y me preparó para continuar mis estudios y enfrentar nuevos retos en el sector alimentario."                  </p>
+                  <h5 class="fw-bold mb-0">Ana Ramírez</h5>
+                  <small class="text-muted">Alumna de 6to semestre</small>
+                  <span class="badge bg-warning text-dark mt-2">Demostración</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimoniosCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimoniosCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  ===================================================
+  SECCIÓN NOTICIAS
+  
+  Eventos, ferias, convocatorias y actividades.
+  
+  Componentes Bootstrap: Cards, Badges
+  ===================================================
+  -->
+  <section id="noticias" class="section-padding">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Actualidad</span>
+        <h2 class="section-title">Noticias y Eventos</h2>
+        <p class="section-subtitle">Mantente informado sobre las actividades de nuestra comunidad</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Noticia 1 -->
+        <article class="col-md-6 col-lg-4">
+          <div class="news-card card h-100 border-0 shadow-sm">
+            <!-- TODO: Colocar imagen real del evento -->
+            <img src="assets/img/eventocultural.jpeg" class="card-img-top" alt="Evento institucional">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-primary">Evento</span>
+                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>10 Jul 2026</small>
+              </div>
+              <h5 class="card-title fw-bold">eventos Culturales 2026</h5>
+              <p class="card-text text-muted">Nuestros estudiantes participan en eventos culturales en el Municipio de Aculco.</p>
+              
+            </div>
+          </div>
+        </article>
+        <!-- Noticia 2 -->
+        <article class="col-md-6 col-lg-4">
+          <div class="news-card card h-100 border-0 shadow-sm">
+            <img src="assets/img/graduacion.jpeg" class="card-img-top" alt="Graduación">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-success">Convocatoria</span>
+                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>05 Jul 2026</small>
+              </div>
+              <h5 class="card-title fw-bold">Graduación Generación 2023-2026</h5>
+              <p class="card-text text-muted">Celebramos la graduación de nuestros estudiantes que culminaran exitosamente su bachillerato tecnológico.</p>
+            </div>
+          </div>
+        </article>
+        <!-- Noticia 3 -->
+        <article class="col-md-6 col-lg-4">
+          <div class="news-card card h-100 border-0 shadow-sm">
+            <img src="assets/img/futbol2.jpeg" class="card-img-top" alt="Torneo deportivo">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-danger">Deportes</span>
+                <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>28 Jun 2026</small>
+              </div>
+              <h5 class="card-title fw-bold">Torneo Interplantelares de Fútbol</h5>
+              <p class="card-text text-muted">Nuestro equipo representativo obtuvo el segundo lugar en el torneo regional de fútbol.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--
+===================================================
+SECCIÓN RECICLAJE
+
+Programa de reciclaje CECyTEM Aculco + Municipio
+Colores verdes armónicos que combinan con la paleta
+institucional existente.
+===================================================
+-->
+<section id="reciclaje" class="section-padding recycling-section">
+  <div class="container">
+    <!-- Encabezado de sección -->
+<div class="section-header text-center mb-5">
+  <span class="section-tag recycling-tag">
+    <i class="bi bi-recycle me-2"></i>Medio Ambiente
+  </span>
+  <h2 class="section-title recycling-title">Programa de Reciclaje</h2>
+  <p class="section-subtitle">
+    CECyTEM Plantel Aculco y el H. Ayuntamiento de Aculco trabajando juntos...
+  </p>
+</div>
+
+    <!-- Introducción -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10">
+        <div class="recycling-intro card border-0 shadow-sm p-4 p-md-5">
+          <div class="row align-items-center g-4">
+            <div class="col-md-8">
+              <h3 class="fw-bold mb-3" style="color: #2d7a4f;">
+                <i class="bi bi-tree-fill me-2"></i>Compromiso con el medio ambiente
+              </h3>
+              <p class="mb-3">
+                El CECyTEM Plantel Aculco, en colaboración con el H. Ayuntamiento de Aculco, implementa un programa integral de reciclaje que busca fomentar la cultura ambiental entre nuestros estudiantes y la comunidad en general.
+              </p>
+              <p class="mb-0">
+                Juntos trabajamos por un municipio más limpio, educando a las nuevas generaciones sobre la importancia de separar, reutilizar y reciclar los residuos para preservar nuestro entorno natural.
+              </p>
+            </div>
+            <div class="col-md-4 text-center">
+              <div class="recycling-icon-large">
+                <i class="bi bi-recycle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tipos de reciclaje -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3">
+        <div class="recycling-card card h-100 border-0 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <div class="recycling-type-icon bg-primary-recycling">
+              <i class="bi bi-file-earmark-text"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-2">Papel y Cartón</h5>
+            <p class="text-muted small mb-0">
+              Periódicos, revistas, cajas de cartón y hojas de papel. Se recolecta los días martes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="recycling-card card h-100 border-0 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <div class="recycling-type-icon bg-secondary-recycling">
+              <i class="bi bi-cup-straw"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-2">Plástico</h5>
+            <p class="text-muted small mb-0">
+              Botellas PET, envases de plástico y tapas. Se recolecta los días jueves.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="recycling-card card h-100 border-0 shadow-sm">
+          <div class="card-body p-4 text-center">
+            <div class="recycling-type-icon bg-tertiary-recycling">
+              <i class="bi bi-droplet-half"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-2">Aluminio</h5>
+            <p class="text-muted small mb-0">
+              latas y frascos de Aluminio. Se recolecta los días viernes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <!-- Estadísticas y beneficios -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4" style="color: #2d7a4f;">
+              <i class="bi bi-graph-up-arrow me-2"></i>Impacto del programa
+            </h4>
+            <div class="recycling-stat mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="small fw-bold">Reducción de residuos</span>
+                <span class="small text-success">75%</span>
+              </div>
+              <div class="progress" style="height: 10px;">
+                <div class="progress-bar bg-success" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="recycling-stat mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="small fw-bold">Participación estudiantil</span>
+                <span class="small text-success">85%</span>
+              </div>
+              <div class="progress" style="height: 10px;">
+                <div class="progress-bar bg-success" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="recycling-stat mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="small fw-bold">Material reciclado (kg/mes)</span>
+                <span class="small text-success">70 kg</span>
+              </div>
+              <div class="progress" style="height: 10px;">
+                <div class="progress-bar bg-success" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="recycling-stat">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="small fw-bold">Árboles salvados</span>
+                <span class="small text-success">120</span>
+              </div>
+              <div class="progress" style="height: 10px;">
+                <div class="progress-bar bg-success" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4" style="color: #2d7a4f;">
+              <i class="bi bi-check-circle-fill me-2"></i>Beneficios del reciclaje
+            </h4>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                <div>
+                  <strong>Reduce la contaminación</strong>
+                  <p class="small text-muted mb-0">Disminuye la cantidad de residuos en vertederos</p>
+                </div>
+              </li>
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                <div>
+                  <strong>Conserva recursos naturales</strong>
+                  <p class="small text-muted mb-0">Ahorra agua, energía y materias primas</p>
+                </div>
+              </li>
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                <div>
+                  <strong>Genera empleos verdes</strong>
+                  <p class="small text-muted mb-0">Crea oportunidades en la industria del reciclaje</p>
+                </div>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                <div>
+                  <strong>Educa a la comunidad</strong>
+                  <p class="small text-muted mb-0">Fomenta valores ambientales en las nuevas generaciones</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+        <!--
+===================================================
+CARRUSEL DE IMÁGENES - RECICLAJE
+
+Carrusel automático con transición fade elegante
+entre las secciones de estadísticas y el CTA.
+===================================================
+-->
+<div class="row justify-content-center mb-5">
+  <div class="col-lg-10">
+    <div id="reciclajeCarousel" class="carousel slide recycling-carousel shadow-lg" data-bs-ride="carousel" data-bs-interval="4000">
+      
+      <!-- Indicadores personalizados -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#reciclajeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+        <button type="button" data-bs-target="#reciclajeCarousel" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+        <button type="button" data-bs-target="#reciclajeCarousel" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+      </div>
+
+      <!-- Slides del carrusel -->
+      <div class="carousel-inner rounded-4 overflow-hidden">
+        
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <!-- TODO: Colocar imagen real de reciclaje en /assets/img/reciclaje1.jpg -->
+          <img src="/assets/img/alumnos.png" class="d-block w-100 recycling-carousel-img" alt="Estudiantes separando residuos para reciclaje">
+          <div class="carousel-caption recycling-caption">
+            <div class="recycling-caption-content">
+              <span class="recycling-caption-badge">
+                <i class="bi bi-recycle me-2"></i>Compromiso Ambiental
+              </span>
+              <h3 class="recycling-caption-title">Separación de residuos</h3>
+              <p class="recycling-caption-text">Nuestros estudiantes participan activamente en la separación y clasificación de materiales reciclables</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <!-- TODO: Colocar imagen real de reciclaje en /assets/img/reciclaje2.jpg -->
+          <img src="/assets/img/actireciclaje.jpeg" class="d-block w-100 recycling-carousel-img" alt="Jornada de reciclaje en el plantel">
+          <div class="carousel-caption recycling-caption">
+            <div class="recycling-caption-content">
+              <span class="recycling-caption-badge">
+                <i class="bi bi-people-fill me-2"></i>Proyectos
+              </span>
+              <h3 class="recycling-caption-title">Proyectos de reciclaje</h3>
+              <p class="recycling-caption-text">Colaboración entre el CECyTEM y el municipio para hacer proyectos con elementos de reciclaje</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <!-- TODO: Colocar imagen real de reciclaje en /assets/img/reciclaje3.jpg -->
+          <img src="/assets/img/separacionderesiduos.jpg" class="d-block w-100 recycling-carousel-img" alt="Puntos de reciclaje en el plantel">
+          <div class="carousel-caption recycling-caption">
+            <div class="recycling-caption-content">
+              <span class="recycling-caption-badge">
+                <i class="bi bi-tree-fill me-2"></i>Sostenibilidad
+              </span>
+              <h3 class="recycling-caption-title">Puntos de reciclaje</h3>
+              <p class="recycling-caption-text">Contenedores estratégicamente ubicados para facilitar el reciclaje en todo el plantel</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles de navegación -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#reciclajeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reciclajeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+    <!-- Llamado a la acción -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-8 text-center">
+        <div class="recycling-cta p-4 p-md-5 rounded-4">
+          <h3 class="fw-bold text-white mb-3">
+            <i class="bi bi-heart-fill me-2"></i>¡Únete al cambio!
+          </h3>
+          <p class="text-white mb-4">
+            Cada acción cuenta. Separa tus residuos, participa en las jornadas de reciclaje y ayuda a construir un Aculco más limpio y sostenible para las futuras generaciones.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ========================================== -->
+  <!-- SECCIÓN CONTACTO -->
+  <!-- ========================================== -->
+  <section id="contacto" class="section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <span class="section-tag">Comunícate</span>
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">Estamos para atenderte. Envíanos tus dudas o comentarios</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- COLUMNA IZQUIERDA: Información de contacto -->
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-primary mb-4">Información de Contacto</h4>
+              
+              <div class="contact-item d-flex align-items-start mb-3">
+                <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; flex-shrink: 0;">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Dirección</h6>
+                  <p class="mb-0 text-muted small">Aculco de Espinoza, Estado de México, México</p>
+                </div>
+              </div>
+
+              <div class="contact-item d-flex align-items-start mb-3">
+                <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; flex-shrink: 0;">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Teléfono</h6>
+                  <p class="mb-0 text-muted small">718 124 05 20</p>
+                </div>
+              </div>
+
+              <div class="contact-item d-flex align-items-start mb-3">
+                <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; flex-shrink: 0;">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Correo electrónico</h6>
+                  <p class="mb-0 text-muted small">plantel.aculco@cecytem.mx</p>
+                </div>
+              </div>
+
+              <div class="contact-item d-flex align-items-start mb-3">
+                <div class="contact-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px; flex-shrink: 0;">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <div>
+                  <h6 class="mb-1 fw-bold">Horario de atención</h6>
+                  <p class="mb-0 text-muted small">Lunes a Viernes: 8:00 - 16:00</p>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <h6 class="fw-bold mb-3">Síguenos en redes</h6>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/share/19gkumFM5B/" class="social-link-light" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="social-link-light" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="https://x.com/cecytemaculco1" class="social-link-light" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Formulario -->
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-primary mb-4">Envíanos un mensaje</h4>
+              
+              <!-- Formulario -->
+              <form id="contactForm" action="https://formsubmit.co/danivillafuerte14@gmail.com" method="POST" novalidate>
+                <!-- Configuración oculta de FormSubmit (Sin _next para usar AJAX) -->
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde CECyTEM Aculco">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre completo <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required minlength="3" placeholder="Tu nombre">
+                    <div class="invalid-feedback">Ingresa tu nombre (mínimo 3 caracteres).</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="correo" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="correo" name="email" required placeholder="tucorreo@ejemplo.com">
+                    <div class="invalid-feedback">Ingresa un correo válido.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" maxlength="10" placeholder="10 dígitos" autocomplete="off">
+                    <div class="invalid-feedback">Ingresa exactamente 10 dígitos numéricos.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="asunto" class="form-label">Asunto <span class="text-danger">*</span></label>
+                    <select class="form-select" id="asunto" name="asunto" required>
+                      <option value="" selected disabled>Selecciona un asunto</option>
+                      <option value="Informes generales">Informes generales</option>
+                      <option value="Inscripciones">Inscripciones</option>
+                      <option value="Asunto académico">Asunto académico</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    <div class="invalid-feedback">Selecciona un asunto.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="mensaje" name="message" rows="5" required minlength="10" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    <div class="invalid-feedback">El mensaje debe tener al menos 10 caracteres.</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="privacidad" required>
+                      <label class="form-check-label small" for="privacidad">
+                        He leído y acepto el <a href="src/pages/privacy.html" target="_blank">Aviso de Privacidad</a> <span class="text-danger">*</span>
+                      </label>
+                      <div class="invalid-feedback">Debes aceptar el aviso de privacidad.</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg w-100" id="btnSubmit">
+                      <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- NUEVO: Mensaje de Éxito Profesional (Inicialmente oculto) -->
+              <div id="successMessage" class="success-alert d-none">
+                <div class="success-icon">
+                  <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <h4 class="success-title">¡Mensaje Enviado Correctamente!</h4>
+                <p class="success-text">
+                  Gracias por contactarnos. Hemos recibido tu mensaje y nuestro equipo lo está revisando. 
+                  <strong>Estamos atentos a nuestra respuesta a la brevedad posible.</strong>
+                </p>
+                <button type="button" class="btn btn-outline-success mt-3" onclick="resetFormAndHide()">
+                  <i class="bi bi-arrow-counterclockwise me-2"></i>Enviar otro mensaje
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+   <!-- Mapa de Google -->
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="card border-0 shadow-sm overflow-hidden rounded-4">
+      <div class="ratio ratio-21x9">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.5!2d-99.8513849!3d20.0892048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3ab1b5c75e6b7%3A0x13be6d1c4e39b810!2sCecytem%20Plantel%20Aculco!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+          title="Ubicación del CECyTEM Plantel Aculco"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          style="border:0; width: 100%; height: 100%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+  <!--
+  ===================================================
+  FOOTER
+  
+  Pie de página con:
+  - Información institucional
+  - Mapa del sitio
+  - Contacto
+  - Redes sociales
+  - Derechos reservados
+  
+  Componentes Bootstrap: Grid, List
+  ===================================================
+  -->
+  <footer class="footer bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Columna 1: Sobre el plantel -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center mb-3">
+            <img src="/assets/img/logo-aculco.png" alt="Logo CECyTEM Aculco" width="50" height="50" class="me-2" onerror="this.style.display='none'">
+            <div>
+              <h5 class="mb-0 fw-bold">CECyTEM</h5>
+              <small class="text-white-50">Plantel Aculco</small>
+            </div>
+          </div>
+          <p class="text-white-50 small">
+            Colegio de Estudios Científicos y Tecnológicos del Estado de México. Formando técnicos competentes y ciudadanos comprometidos con el desarrollo de nuestra región.
+          </p>
+          <div class="social-links mt-3">
+            <!-- TODO: Agregar URLs reales -->
+            <a href="https://www.facebook.com/share/19gkumFM5B/" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://x.com/cecytemaculco1?fbclid=IwVERDUATECgxleHRuA2FlbQIxMABzcnRjBmFwcF9pZAwzNTA2ODU1MzE3MjgAAR7_QUOtypFjwb79ckfhfawDG5jmPMtWhQ2_Asae32aAUNOkxFhenTFgdselEw_aem_0c103CfPA5B6gBPjxNstlQ" class="social-link-light" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Mapa del sitio -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3">Mapa del Sitio</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#inicio"><i class="bi bi-chevron-right me-1"></i>Inicio</a></li>
+            <li><a href="#nosotros"><i class="bi bi-chevron-right me-1"></i>Nosotros</a></li>
+            <li><a href="#oferta"><i class="bi bi-chevron-right me-1"></i>Oferta Educativa</a></li>
+            <li><a href="#instalaciones"><i class="bi bi-chevron-right me-1"></i>Instalaciones</a></li>
+            <li><a href="#galeria"><i class="bi bi-chevron-right me-1"></i>Galería</a></li>
+            <li><a href="#noticias"><i class="bi bi-chevron-right me-1"></i>Noticias</a></li>
+            <li><a href="#contacto"><i class="bi bi-chevron-right me-1"></i>Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Enlaces legales -->
+        <div class="col-lg-2 col-md-6">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="src/pages/privacy.html"><i class="bi bi-chevron-right me-1"></i>Aviso de Privacidad</a></li>
+            <li><a href="src/pages/terms.html"><i class="bi bi-chevron-right me-1"></i>Términos y Condiciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3">Contacto</h6>
+          <ul class="list-unstyled footer-contact">
+            <li><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Aculco de Espinoza, Estado de México</li>
+            <!-- TODO: Teléfono real -->
+            <li><i class="bi bi-telephone-fill me-2 text-primary"></i>718 124 05 20 </li>
+            <!-- TODO: Correo real -->
+            <li><i class="bi bi-envelope-fill me-2 text-primary"></i>plantel.aculco@cecytem.mx</li>
+            <li><i class="bi bi-clock-fill me-2 text-primary"></i>Lun - Vie: 8:00 - 16:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Línea divisoria y copyright -->
+      <hr class="my-4 border-secondary">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <small class="text-white-50">&copy; 2026 CECyTEM Plantel Aculco. Todos los derechos reservados.</small>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <small class="text-white-50">Colegio de Estudios Científicos y Tecnológicos del Estado de México</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!--
+  ===================================================
+  BOTÓN VOLVER ARRIBA
+  
+  Botón flotante que aparece al hacer scroll.
+  Permite regresar al inicio de la página.
+  ===================================================
+  -->
+  <button id="backToTop" class="btn btn-primary btn-back-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!--
+  ===================================================
+  TOAST - NOTIFICACIONES
+  
+  Componente Bootstrap para mostrar notificaciones
+  emergentes al usuario.
+  ===================================================
+  -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+    <div id="mainToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header bg-primary text-white">
+        <i class="bi bi-info-circle-fill me-2"></i>
+        <strong class="me-auto">CECyTEM Aculco</strong>
+        <small class="text-white-50">ahora</small>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body" id="toastBody">
+        Mensaje de notificación.
+      </div>
+    </div>
+  </div>
+
+  <!-- Offcanvas (menú lateral para información rápida) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="infoOffcanvas" aria-labelledby="infoOffcanvasLabel">
+    <div class="offcanvas-header bg-primary text-white">
+      <h5 class="offcanvas-title" id="infoOffcanvasLabel">Información Rápida</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <h6 class="fw-bold">Carreras disponibles</h6>
+      <ul class="list-unstyled">
+        <li><i class="bi bi-code-slash text-primary me-2"></i>Técnico en Programación</li>
+        <li><i class="bi bi-cup-hot text-primary me-2"></i>Técnico en Producción Industrial de Alimentos</li>
+      </ul>
+      <hr>
+      <h6 class="fw-bold">Contacto rápido</h6>
+      <p class="small mb-1"><i class="bi bi-telephone me-2"></i>718 124 05 20</p>
+      <p class="small mb-0"><i class="bi bi-envelope me-2"></i>plantel.aculco@cecytem.mx</p>
+    </div>
+  </div>
+
+  <!--
+  ===================================================
+  SCRIPTS
+  
+  Carga de Bootstrap JS y script principal del sitio.
+  ===================================================
+  -->
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

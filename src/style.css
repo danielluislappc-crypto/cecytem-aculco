@@ -1,0 +1,2022 @@
+/**
+ * ===================================================
+ * HOJA DE ESTILOS PRINCIPAL - CECyTEM PLANCEL ACULCO
+ * ===================================================
+ *
+ * Este archivo contiene todos los estilos personalizados
+ * del sitio institucional. Se organiza por secciones:
+ *
+ * 1. Variables CSS (paleta institucional)
+ * 2. Estilos globales
+ * 3. Tipografía
+ * 4. Componentes reutilizables
+ * 5. Navbar
+ * 6. Hero section
+ * 7. Secciones generales
+ * 8. Cards (carreras, instalaciones, noticias)
+ * 9. Galería
+ * 10. Testimonios
+ * 11. Formulario de contacto
+ * 12. Footer
+ * 13. Botón volver arriba
+ * 14. Modo oscuro
+ * 15. Animaciones
+ * 16. Responsive
+ *
+ * Paleta institucional (regla 70-20-10):
+ * - 70% Fondos claros: #FFFFFF, #F4F6F9
+ * - 20% Azules: #405EA8, #243B6B
+ * - 10% Rojo vino: #8E2331 (énfasis)
+ * ===================================================
+ */
+
+/*
+===================================================
+1. VARIABLES CSS
+
+Definición de la paleta institucional y valores
+reutilizables en todo el sitio. Permite modificar
+colores, espaciados y tipografías desde un solo lugar.
+===================================================
+*/
+
+
+
+:root {
+  /* Colores principales */
+  --color-primary: #405EA8;        /* Azul institucional */
+  --color-primary-dark: #243B6B;   /* Azul oscuro */
+  --color-accent: #8E2331;         /* Rojo vino (énfasis) */
+  --color-accent-hover: #6d1a25;   /* Rojo vino más oscuro */
+  
+  /* Fondos (70%) */
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F4F6F9;
+  --color-bg-dark: #1a1d2e;
+  
+  /* Texto */
+  --color-text-dark: #2c3e50;
+  --color-text-muted: #6c757d;
+  --color-text-light: #FFFFFF;
+  
+  /* Tipografía */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  
+  /* Espaciados */
+  --spacing-section: 5rem;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+  
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/*
+===================================================
+2. ESTILOS GLOBALES
+
+Reset básico y configuración general del body.
+Aplica la fuente Poppins y el color de texto base.
+===================================================
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Compensa la navbar fija */
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/*
+===================================================
+3. TIPOGRAFÍA
+
+Jerarquía visual clara con Poppins y Montserrat.
+Títulos gruesos, texto legible.
+===================================================
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+}
+
+/*
+===================================================
+4. COMPONENTES REUTILIZABLES
+
+Estilos para secciones, encabezados, botones
+y otros elementos que se repiten en el sitio.
+===================================================
+*/
+
+/* Espaciado estándar de secciones */
+.section-padding {
+  padding: var(--spacing-section) 0;
+}
+
+/* Encabezado de sección */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background-color: rgba(64, 94, 168, 0.1);
+  color: var(--color-primary);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Botones personalizados */
+.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-normal);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(142, 35, 49, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* Sobrescribe el color primario de Bootstrap */
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+/*
+===================================================
+5. NAVBAR
+
+Barra de navegación fija con efecto al hacer scroll.
+Cambia de transparente a sólida al desplazar.
+===================================================
+*/
+
+/* Barra superior informativa */
+.top-bar {
+  background-color: var(--color-primary-dark) !important;
+  font-size: 0.85rem;
+}
+
+.top-bar a {
+  transition: color var(--transition-fast);
+}
+
+.top-bar a:hover {
+  color: var(--color-accent) !important;
+}
+
+/* Navbar principal */
+#mainNavbar {
+  background-color: var(--color-primary);
+  transition: all var(--transition-normal);
+  padding: 0.75rem 0;
+}
+
+#mainNavbar.scrolled {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem 0;
+}
+
+.navbar-brand .brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: white !important;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Dropdown personalizado */
+.dropdown-menu {
+  border: none;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.dropdown-item {
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem 1rem;
+  transition: all var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+/*
+===================================================
+6. HERO SECTION
+
+Sección principal con carousel de fondo.
+Muestra la primera impresión del plantel.
+===================================================
+*/
+.hero-section {
+  position: relative;
+}
+
+.hero-img {
+  height: 90vh;
+  min-height: 600px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.hero-caption {
+  bottom: 20%;
+  text-align: left;
+  top: auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  color: white;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.hero-lead {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Barra de estadísticas */
+.stats-bar {
+  background-color: white;
+  margin-top: -80px;
+  position: relative;
+  z-index: 10;
+  padding: 2.5rem 0;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-item {
+  padding: 1rem;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/*
+===================================================
+7. SECCIÓN SOBRE NOSOTROS
+
+Tarjetas de valores y acordeón de misión/visión.
+===================================================
+*/
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-main-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  text-align: center;
+}
+
+.about-badge h3 {
+  color: white !important;
+  font-size: 2.5rem;
+}
+
+.value-card {
+  background-color: white;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+/* Acordeón personalizado */
+.accordion-custom .accordion-item {
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius-md) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-custom .accordion-button {
+  background-color: white;
+  font-weight: 600;
+  padding: 1.25rem 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.accordion-custom .accordion-button:not(.collapsed) {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: none;
+}
+
+.accordion-custom .accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--color-primary);
+}
+
+.accordion-custom .accordion-body {
+  padding: 1.5rem;
+}
+
+/*
+===================================================
+8. CARDS - CARRERAS, INSTALACIONES, NOTICIAS
+
+Tarjetas con bordes redondeados, sombras suaves
+y efectos hover discretos.
+===================================================
+*/
+
+/* Career cards */
+.career-card {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.career-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.career-card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.career-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.career-card:hover .career-card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.career-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+/* Facility cards */
+.facility-card {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.facility-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.facility-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.facility-card:hover .facility-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.facility-icon {
+  position: absolute;
+  bottom: 20px;   /* ← CAMBIADO: de -25px a 20px */
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  z-index: 2;
+}
+
+.facility-card:hover .facility-icon {
+  transform: rotate(360deg);
+  background-color: var(--color-primary);
+}
+/*
+===================================================
+IMÁGENES DE INSTALACIONES CLICKEABLES
+
+Permite que las imágenes de las instalaciones
+se puedan clickear para abrirse en lightbox.
+===================================================
+*/
+.facility-img-clickable {
+  cursor: pointer;
+  transition: transform var(--transition-slow);
+}
+
+.facility-img-clickable:hover {
+  transform: scale(1.05);
+}
+/* News cards */
+.news-card {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.news-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Ally cards */
+.ally-card {
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ally-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.ally-logo-wrapper {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ally-logo {
+  max-height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter var(--transition-normal);
+}
+
+.ally-card:hover .ally-logo {
+  filter: grayscale(0%);
+}
+
+/*
+===================================================
+9. GALERÍA
+
+Grid responsive con efecto hover y lightbox.
+===================================================
+*/
+
+/* Filtros de galería */
+.btn-filter {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 2px solid transparent;
+  padding: 0.5rem 1.5rem;
+  margin: 0.25rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.btn-filter:hover {
+  color: var(--color-primary);
+  background-color: rgba(64, 94, 168, 0.1);
+}
+
+.btn-filter.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Items de galería */
+.gallery-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(36, 59, 107, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+   pointer-events: none
+}
+
+.gallery-overlay i {
+  color: white;
+  font-size: 2rem;
+  transform: scale(0.5);
+  transition: transform var(--transition-normal);
+  pointer-events: none;
+}
+
+.gallery-img-wrapper:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+.gallery-img-wrapper:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-img-wrapper:hover .gallery-overlay i {
+  transform: scale(1);
+}
+
+.gallery-item {
+  transition: all var(--transition-normal);
+}
+
+.gallery-item.hidden {
+  display: none;
+}
+
+/*
+===================================================
+10. TESTIMONIOS
+
+Tarjetas con foto, cita y nombre.
+===================================================
+*/
+.testimonial-card {
+  border-radius: var(--border-radius-lg);
+  padding: 2rem !important;
+}
+
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+/*
+===================================================
+11. FORMULARIO DE CONTACTO
+
+Estilos de inputs, validación y feedback visual.
+===================================================
+*/
+.form-control,
+.form-select {
+  border-radius: var(--border-radius-sm);
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  transition: all var(--transition-fast);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(64, 94, 168, 0.15);
+}
+
+.contact-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+}
+
+/*
+===================================================
+12. FOOTER
+
+Pie de página oscuro con enlaces y redes sociales.
+===================================================
+*/
+.footer {
+  background-color: var(--color-bg-dark) !important;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+.footer-contact li {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: translateY(-3px);
+}
+.social-link-light {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(64, 94, 168, 0.1); /* Azul claro */
+  color: var(--color-primary); /* Azul institucional */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-link-light:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Para modo oscuro */
+body.dark-mode .social-link-light {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/*
+===================================================
+13. BOTÓN VOLVER ARRIBA
+
+Botón flotante circular que aparece al hacer scroll.
+===================================================
+*/
+.btn-back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  z-index: 999;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-back-to-top:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-5px);
+}
+
+/*
+===================================================
+14. MODO OSCURO
+
+Clase que se añade al body para activar el modo oscuro.
+Cambia los colores principales del sitio.
+===================================================
+*/
+body.dark-mode {
+  background-color: #1a1d2e;
+  color: #e0e0e0;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
+}
+
+body.dark-mode .bg-light {
+  background-color: #232738 !important;
+}
+
+body.dark-mode .card {
+  background-color: #2a2e42;
+  color: #e0e0e0;
+}
+
+body.dark-mode .text-muted {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #2a2e42;
+  border-color: #3a3f55;
+  color: #e0e0e0;
+}
+
+/*
+===================================================
+15. ANIMACIONES
+
+Animaciones al hacer scroll usando Intersection Observer.
+===================================================
+*/
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*
+===================================================
+16. RESPONSIVE
+
+Ajustes para tablet y móvil.
+===================================================
+*/
+@media (max-width: 991.98px) {
+  .hero-img {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .stats-bar {
+    margin-top: -40px;
+    padding: 1.5rem 0;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .about-main-img {
+    height: 350px;
+    margin-bottom: 3rem;
+  }
+
+  .about-badge {
+    right: 10px;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-caption {
+    bottom: 10%;
+  }
+
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0 !important;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .btn-back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+
+  .hero-img {
+    height: 80vh;
+  }
+
+  .stat-item {
+    padding: 0.5rem;
+  }
+}
+
+/*
+===================================================
+ACCESIBILIDAD
+
+Focus visible para navegación por teclado.
+===================================================
+*/
+*:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Reducir animaciones para usuarios que lo prefieran */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*
+===================================================
+VALIDACIÓN DE CAMPOS DEL FORMULARIO
+
+Estilos para mostrar feedback visual cuando los
+campos son válidos o inválidos.
+===================================================
+*/
+.form-control.is-valid {
+  border-color: #198754;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Forzar que el teléfono vacío no tenga check */
+#telefono:placeholder-shown {
+  background-image: none !important;
+}
+
+#telefono.is-valid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+}
+
+#telefono.is-invalid {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") !important;
+}
+
+
+
+/*
+===================================================
+SECCIÓN RECICLAJE
+
+Colores verdes armónicos que combinan con la paleta
+institucional existente (azul y rojo vino).
+===================================================
+*/
+
+/* Fondo de la sección */
+.recycling-section {
+  background: linear-gradient(135deg, #f8fff9 0%, #e8f5e9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Patrón decorativo de fondo */
+.recycling-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(45, 122, 79, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.recycling-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Tag de sección */
+.recycling-tag {
+  background-color: rgba(45, 122, 79, 0.1);
+  color: #2d7a4f;
+}
+
+/* Título de sección */
+.recycling-title {
+  color: #1b5e3a;
+}
+
+.recycling-title::after {
+  background: linear-gradient(90deg, #2d7a4f, #4caf50);
+}
+
+/* Introducción */
+.recycling-intro {
+  background-color: white;
+  border-left: 5px solid #2d7a4f;
+}
+
+/* Ícono grande de reciclaje */
+.recycling-icon-large {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #2d7a4f 0%, #4caf50 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(45, 122, 79, 0.3);
+}
+
+.recycling-icon-large i {
+  font-size: 4rem;
+  color: white;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Tarjetas de tipos de reciclaje */
+.recycling-card {
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.recycling-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(45, 122, 79, 0.2);
+}
+
+/* Íconos de tipos de reciclaje */
+.recycling-type-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.recycling-card:hover .recycling-type-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.bg-primary-recycling {
+  background: linear-gradient(135deg, #2d7a4f 0%, #4caf50 100%);
+}
+
+.bg-secondary-recycling {
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+}
+
+.bg-tertiary-recycling {
+  background: linear-gradient(135deg, #7b1fa2 0%, #ab47bc 100%);
+}
+
+.bg-quaternary-recycling {
+  background: linear-gradient(135deg, #f57c00 0%, #ffa726 100%);
+}
+
+/* Estadísticas */
+.recycling-stat {
+  padding: 10px 0;
+}
+
+.recycling-stat .progress {
+  background-color: #e8f5e9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.recycling-stat .progress-bar {
+  background: linear-gradient(90deg, #2d7a4f 0%, #4caf50 100%);
+  border-radius: 10px;
+}
+
+/* Tabla de horario */
+.table-success {
+  background-color: #2d7a4f !important;
+  color: white !important;
+}
+
+.table-success th {
+  color: white !important;
+  font-weight: 600;
+}
+
+/* Llamado a la acción */
+.recycling-cta {
+  background: linear-gradient(135deg, #2d7a4f 0%, #4caf50 100%);
+  box-shadow: 0 15px 40px rgba(45, 122, 79, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.recycling-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.recycling-cta .btn-light {
+  background-color: white;
+  color: #2d7a4f;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.recycling-cta .btn-light:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .recycling-icon-large {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+  }
+
+  .recycling-icon-large i {
+    font-size: 3rem;
+  }
+
+  .recycling-type-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+
+
+/*
+===================================================
+CARRUSEL DE RECICLAJE
+
+Carrusel con transición fade elegante, overlay verde
+y texto animado. Se ubica entre estadísticas y CTA.
+===================================================
+*/
+
+/* Contenedor del carrusel */
+.recycling-carousel {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(45, 122, 79, 0.25);
+}
+
+/* Transición fade entre slides */
+.recycling-carousel .carousel-item {
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* Imágenes del carrusel */
+.recycling-carousel-img {
+  height: 450px;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 6s ease;
+}
+
+/* Efecto zoom lento al mostrar cada slide */
+.recycling-carousel .carousel-item.active .recycling-carousel-img {
+  transform: scale(1.08);
+}
+
+/* Overlay verde con gradiente */
+.recycling-carousel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 94, 58, 0.3) 0%,
+    rgba(45, 122, 79, 0.5) 50%,
+    rgba(27, 94, 58, 0.8) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Caption del carrusel */
+.recycling-caption {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 2rem;
+  text-align: left;
+  z-index: 2;
+}
+
+.recycling-caption-content {
+  max-width: 600px;
+  animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Badge del caption */
+.recycling-caption-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Título del caption */
+.recycling-caption-title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+/* Texto del caption */
+.recycling-caption-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+/* Indicadores personalizados */
+.recycling-carousel .carousel-indicators {
+  bottom: 20px;
+  z-index: 3;
+}
+
+.recycling-carousel .carousel-indicators button {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  opacity: 1;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.recycling-carousel .carousel-indicators button.active {
+  background-color: white;
+  width: 60px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Controles de navegación */
+.recycling-carousel .carousel-control-prev,
+.recycling-carousel .carousel-control-next {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.recycling-carousel:hover .carousel-control-prev,
+.recycling-carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.recycling-carousel .carousel-control-prev {
+  left: 20px;
+}
+
+.recycling-carousel .carousel-control-next {
+  right: 20px;
+}
+
+.recycling-carousel .carousel-control-prev-icon,
+.recycling-carousel .carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.recycling-carousel .carousel-control-prev-icon:hover,
+.recycling-carousel .carousel-control-next-icon:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .recycling-carousel-img {
+    height: 350px;
+  }
+
+  .recycling-caption-title {
+    font-size: 2rem;
+  }
+
+  .recycling-caption-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .recycling-carousel-img {
+    height: 280px;
+  }
+
+  .recycling-caption {
+    padding: 2rem 1.5rem;
+  }
+
+  .recycling-caption-title {
+    font-size: 1.5rem;
+  }
+
+  .recycling-caption-text {
+    font-size: 0.9rem;
+  }
+
+  .recycling-caption-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .recycling-carousel .carousel-control-prev-icon,
+  .recycling-carousel .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .recycling-carousel-img {
+    height: 250px;
+  }
+
+  .recycling-caption-title {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+/*
+===================================================
+CORRECCIÓN MODO OSCURO - ESTADÍSTICAS
+
+Asegura que los números sean visibles en modo oscuro
+===================================================
+*/
+body.dark-mode .stat-number {
+  color: #ffffff !important;
+}
+
+body.dark-mode .stat-label {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode .stat-icon {
+  color: #4caf50 !important; /* Verde claro para modo oscuro */
+}
+
+/* Opcional: Cambiar el fondo de la stats bar en modo oscuro */
+body.dark-mode .stats-bar {
+  background-color: #2a2e42 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*
+===================================================
+CORRECCIÓN MODO OSCURO - TESTIMONIO
+===================================================
+*/
+
+/* Texto principal del testimonio */
+body.dark-mode .testimonial-text {
+  color: #e0e0e0 !important;
+  opacity: 1 !important;
+}
+
+/* Nombre de la persona */
+body.dark-mode .testimonial-card h5 {
+  color: #ffffff !important;
+}
+
+/* Información (Egresado - Generación) */
+body.dark-mode .testimonial-card small.text-muted {
+  color: #b0b0b0 !important;
+}
+
+/* Comillas grandes */
+body.dark-mode .testimonial-card .display-4 {
+  color: #4caf50 !important;
+  opacity: 1 !important;
+}
+
+/* Badge de demostración */
+body.dark-mode .badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000000 !important;
+}
+
+/* Fondo de la tarjeta */
+body.dark-mode .testimonial-card {
+  background-color: #2a2e42 !important;
+}
+
+
+/*
+===================================================
+FLECHAS DEL CARRUSEL DE TESTIMONIOS
+
+Hace que las flechas se vean en ambos modos
+===================================================
+*/
+
+/* Flechas en modo CLARO */
+#testimoniosCarousel .carousel-control-prev-icon,
+#testimoniosCarousel .carousel-control-next-icon {
+  background-color: rgba(64, 94, 168, 0.8); /* Azul institucional */
+  border-radius: 50%;
+  padding: 12px;
+  width: 45px;
+  height: 45px;
+  background-size: 60%;
+  background-position: center;
+  filter: none !important; /* Quitar filtro de Bootstrap */
+}
+
+/* Flechas en modo OSCURO */
+body.dark-mode #testimoniosCarousel .carousel-control-prev-icon,
+body.dark-mode #testimoniosCarousel .carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* Hover en las flechas */
+#testimoniosCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#testimoniosCarousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: var(--color-accent) !important; /* Rojo vino al hacer hover */
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Hacer las flechas más grandes y visibles */
+#testimoniosCarousel .carousel-control-prev,
+#testimoniosCarousel .carousel-control-next {
+  width: 60px;
+  opacity: 1;
+}
+
+#testimoniosCarousel .carousel-control-prev {
+  left: -30px;
+}
+
+#testimoniosCarousel .carousel-control-next {
+  right: -30px;
+}
+
+
+/*
+===================================================
+CENTRAR TARJETAS DE RECICLAJE
+
+Asegura que las tarjetas y su contenido estén
+perfectamente centrados
+===================================================
+*/
+
+/* Centrar el contenedor de las tarjetas */
+.recycling-section .row.g-4.mb-5 {
+  justify-content: center;
+}
+
+/* Centrar cada tarjeta */
+.recycling-card {
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+/* Centrar el body de la tarjeta */
+.recycling-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+/* Centrar el ícono */
+.recycling-type-icon {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centrar el título */
+.recycling-card h5 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Centrar el texto */
+.recycling-card p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*
+===================================================
+CORRECCIÓN TÍTULO SECCIÓN RECICLAJE
+
+Evita que el título se corte o no se vea
+===================================================
+*/
+
+/* Asegurar que el título sea visible */
+.recycling-section .section-title {
+  color: #1b5e3a !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Asegurar que el tag sea visible */
+.recycling-section .section-tag {
+  position: relative;
+  z-index: 2;
+}
+
+/* Asegurar que el subtítulo sea visible */
+.recycling-section .section-subtitle {
+  color: #4a4a4a !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Evitar que el fondo tape el contenido */
+.recycling-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Quitar overflow que pueda cortar el texto */
+.recycling-section {
+  overflow: visible !important;
+}
+
+/* Asegurar padding superior suficiente */
+.recycling-section .section-header {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+
+.recycling-title {
+  color: #1b5e3a !important;
+  font-weight: 800 !important;
+}
+
+.recycling-tag {
+  background-color: rgba(45, 122, 79, 0.15) !important;
+  color: #2d7a4f !important;
+  font-weight: 600 !important;
+}
+
+
+
+
+/* =========================================
+   ESTILOS PARA LA MASCOTA EN EL NAVBAR
+   ========================================= */
+
+/* Contenedor del video */
+.navbar-mascot-video {
+  height: 55px;       /* Tamaño base de la mascota */
+  width: auto;        /* Mantiene proporción */
+  object-fit: contain;
+  margin-right: 12px; /* Espacio entre logo y texto */
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* Sombra suave */
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre la mascota */
+.navbar-mascot-video:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Ajustes del texto "CECyTEM Plantel Aculco" */
+.brand-text {
+  line-height: 1.1;
+}
+
+.brand-title {
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+
+/* LOGO ESTÁTICO (ajuste para que coincida con la altura del video) */
+.navbar-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* RESPONSIVE: Ajustes para tablets y móviles */
+@media (max-width: 991.98px) {
+  .navbar-mascot-video {
+    height: 45px;
+    margin-right: 8px;
+  }
+  .navbar-logo {
+    height: 40px;
+  }
+  .brand-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* En celulares muy pequeños, ocultamos el subtítulo para ahorrar espacio */
+  .brand-subtitle {
+    display: none;
+  }
+  .navbar-mascot-video {
+    height: 35px;
+    margin-right: 5px;
+  }
+  .navbar-logo {
+    height: 35px;
+  }
+  .brand-title {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* =========================================
+   MENSAJE DE ÉXITO DEL FORMULARIO
+   ========================================= */
+
+.success-alert {
+  background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+  border: 2px solid #48bb78;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(72, 187, 120, 0.2);
+  animation: slideInSuccess 0.6s ease-out;
+  margin-top: 20px;
+}
+
+@keyframes slideInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+.success-icon i {
+  font-size: 48px;
+  color: white;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-title {
+  color: #276749;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.success-text {
+  color: #4a5568;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 0;
+  animation: fadeIn 0.6s ease-out 0.6s both;
+}
+
+.success-text strong {
+  display: block;
+  margin-top: 10px;
+  color: #276749;
+  font-size: 18px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Ocultar formulario cuando se muestra el éxito */
+#contactForm.submitted {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .success-alert {
+    padding: 30px 20px;
+  }
+  
+  .success-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .success-icon i {
+    font-size: 40px;
+  }
+  
+  .success-title {
+    font-size: 20px;
+  }
+  
+  .success-text {
+    font-size: 15px;
+  }
+}
+
