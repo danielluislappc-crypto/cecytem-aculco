@@ -180,7 +180,14 @@
   muted 
   loop 
   playsinline
+  webkit-playsinline
+  preload="auto"
+  poster="assets/img/logocecy.jpg"
+  x5-video-player-type="h5"
+  x5-video-player-fullscreen="false"
   aria-label="Mascota Cecyto animada">
+  <!-- Fallback para móviles que no soportan video -->
+  <img src="assets/img/logocecy.jpg" alt="Mascota" class="navbar-logo-fallback">
 </video>
       <!-- Texto del Brand -->
       <div class="brand-text ms-2 overflow-hidden">

@@ -2798,3 +2798,61 @@ body.dark-mode .dropdown-menu-dark {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ===================================================
+   VIDEO EN MÓVIL - FORZAR VISUALIZACIÓN
+   =================================================== */
+
+/* Asegurar que el video se vea en TODOS los móviles */
+@media (max-width: 767.98px) {
+  .navbar-mascot-video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 35px !important;
+    min-height: 30px !important;
+    width: auto !important;
+    min-width: 35px !important;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 0;
+    background-color: transparent !important;
+  }
+  
+  /* Si el video no carga, mostrar la imagen fallback */
+  .navbar-mascot-video:not([src]),
+  .navbar-mascot-video[src=""] {
+    display: none !important;
+  }
+  
+  .navbar-logo-fallback {
+    display: block !important;
+    height: 35px !important;
+    width: auto !important;
+  }
+  
+  /* Ajustar el contenedor */
+  .navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    max-width: 80% !important;
+  }
+  
+  .brand-title {
+    font-size: 0.9rem !important;
+    display: block !important;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.65rem !important;
+    display: block !important;
+  }
+}
+
+/* iPhone específico */
+@supports (-webkit-touch-callout: none) {
+  .navbar-mascot-video {
+    -webkit-appearance: none;
+  }
+}
