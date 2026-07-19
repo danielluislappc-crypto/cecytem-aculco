@@ -2856,3 +2856,68 @@ body.dark-mode .dropdown-menu-dark {
     -webkit-appearance: none;
   }
 }
+
+/* ===================================================
+   CENTRAR MENÚ EN DESKTOP/LAPTOP
+   =================================================== */
+
+/* Desktop y Laptop (> 992px) - Menú centrado */
+@media (min-width: 992px) {
+  /* Centrar el contenedor del menú */
+  #navbarMenu {
+    justify-content: center !important;
+    flex-grow: 1;
+  }
+  
+  /* Espaciar uniformemente los items del menú */
+  .navbar-nav {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  /* Ajustar el navbar completo */
+  #mainNavbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo a la izquierda */
+  .navbar-brand {
+    margin-right: auto;
+  }
+  
+  /* Botón modo oscuro a la derecha */
+  #darkModeToggle {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Ajustar links del menú */
+  .navbar-nav .nav-link {
+    padding: 0.6rem 1rem !important;
+    text-align: center;
+  }
+  
+  /* Dropdown centrado */
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet y Móvil (<= 991px) - Mantener como está */
+@media (max-width: 991.98px) {
+  #navbarMenu {
+    justify-content: flex-start !important;
+  }
+  
+  .navbar-nav {
+    justify-content: flex-start;
+    gap: 0;
+  }
+  
+  .navbar-brand {
+    margin-right: 0;
+  }
+}
