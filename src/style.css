@@ -3302,3 +3302,44 @@ html, body {
   background-color: rgba(255, 255, 255, 0.15) !important;
   border-radius: 8px !important;
 }
+
+
+/* ===================================================
+   SOLUCIÓN DEFINITIVA: DROPDOWN MÓVIL FUNCIONAL
+   =================================================== */
+
+@media (max-width: 991.98px) {
+  /* Estado normal: oculto (Bootstrap lo manejará) */
+  .navbar-nav .dropdown-menu {
+    display: none;
+    position: static !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0.5rem auto !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 0.75rem !important;
+  }
+
+  /* Cuando Bootstrap agrega la clase .show, lo mostramos FORZOSAMENTE */
+  .navbar-nav .dropdown-menu.show {
+    display: block !important;
+  }
+
+  .dropdown-item {
+    color: #ffffff !important;
+    padding: 0.8rem 1rem !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+    margin: 0.3rem 0 !important;
+    font-weight: 500;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+  }
+}

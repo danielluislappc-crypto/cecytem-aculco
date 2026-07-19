@@ -64,7 +64,7 @@ function initNavbar() {
       link.addEventListener('click', (e) => {
         // 1. Si es el botón "Oferta Educativa" (dropdown-toggle), NO cerrar el menú
         if (link.classList.contains('dropdown-toggle')) {
-          e.stopPropagation(); // Evita que el clic cierre el menú principal
+          // Evita que el clic cierre el menú principal
           return;
         }
         
