@@ -3081,3 +3081,85 @@ body.dark-mode .dropdown-menu-dark {
     transform: rotate(180deg);
   }
 }
+/* ===================================================
+   DROPDOWN MÓVIL - PREVENIR CIERRE AUTOMÁTICO
+   =================================================== */
+
+@media (max-width: 991.98px) {
+  /* Contenedor del dropdown - Posición estática para que no se cierre */
+  .navbar-nav .dropdown {
+    position: static !important;
+  }
+  
+  /* Menú dropdown - Ancho y centrado como en desktop */
+  .navbar-nav .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 85% !important;
+    max-width: 280px !important;
+    margin: 0.5rem auto !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    padding: 0.75rem !important;
+    display: none !important; /* Oculto por defecto */
+    animation: slideDown 0.3s ease;
+  }
+  
+  /* Mostrar dropdown cuando está activo */
+  .navbar-nav .dropdown.show .dropdown-menu {
+    display: block !important;
+  }
+  
+  /* Animación suave */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Items del dropdown */
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.95) !important;
+    padding: 0.9rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    border-radius: 8px !important;
+    margin: 0.3rem 0 !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500;
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+  }
+  
+  /* Flecha del dropdown - Rotar cuando está abierto */
+  .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    border: none !important;
+    font-family: 'bootstrap-icons' !important;
+    content: '\F282' !important; /* Flecha hacia abajo */
+    font-size: 0.8em;
+  }
+  
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+    content: '\F286' !important; /* Flecha hacia arriba */
+  }
+  
+  /* Prevenir que el menú principal se cierre */
+  #navbarMenu.show {
+    padding-bottom: 1rem;
+  }
+}

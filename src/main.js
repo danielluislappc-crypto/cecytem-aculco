@@ -16,17 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initLazyLoad();
   initTooltips();
-  initTabs(); // Ahora esta función sí está definida abajo
   initNavMascot();
 });
 
 // ==========================================
-// 1. NAVBAR CON EFECTO SCROLL
+// 1. NAVBAR CON EFECTO SCROLL Y DROPDOWN MÓVIL CORREGIDO
 // ==========================================
 function initNavbar() {
   const navbar = document.getElementById('mainNavbar');
   if (!navbar) return;
 
+  // Efecto de scroll en el navbar
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
@@ -35,6 +35,7 @@ function initNavbar() {
     }
   });
 
+  // Resaltar enlace activo según la sección
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -56,13 +57,24 @@ function initNavbar() {
     });
   });
 
+  // --- CORRECCIÓN CLAVE PARA EL DROPDOWN EN MÓVIL ---
   const navCollapse = document.getElementById('navbarMenu');
   if (navCollapse) {
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        // 1. Si es el botón "Oferta Educativa" (dropdown-toggle), NO cerrar el menú
+        if (link.classList.contains('dropdown-toggle')) {
+          e.stopPropagation(); // Evita que el clic cierre el menú principal
+          return;
+        }
+        
+        // 2. Si es un enlace normal o una opción del dropdown (Programación/Alimentos), SÍ cerrar el menú
         if (navCollapse.classList.contains('show')) {
-          const bsCollapse = new bootstrap.Collapse(navCollapse);
-          bsCollapse.hide();
+          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+          if (bsCollapse) {
+            // Pequeño delay para que la navegación se sienta natural
+            setTimeout(() => bsCollapse.hide(), 250);
+          }
         }
       });
     });
@@ -110,23 +122,18 @@ function initSmoothScroll() {
 }
 
 // ==========================================
-// 4. CONTADOR ANIMADO DE ESTADÍSTICAS (CORREGIDO)
+// 4. CONTADOR ANIMADO DE ESTADÍSTICAS
 // ==========================================
 function initCounters() {
   const counters = document.querySelectorAll('.stat-number');
-  console.log('🔍 Contadores encontrados:', counters.length); // Mensaje de depuración
-  
-  if (counters.length === 0) {
-    console.warn('⚠️ No se encontraron elementos con la clase .stat-number');
-    return;
-  }
+  if (counters.length === 0) return;
 
   const animateCounter = (counter) => {
     const target = parseInt(counter.getAttribute('data-count'), 10);
     if (isNaN(target)) return;
     
-    const duration = 2000; // 2 segundos
-    const step = target / (duration / 16); // 60fps
+    const duration = 2000;
+    const step = target / (duration / 16);
     let current = 0;
 
     const updateCounter = () => {
@@ -138,23 +145,17 @@ function initCounters() {
         counter.textContent = target;
       }
     };
-
     updateCounter();
   };
 
-  // Threshold reducido a 0.1 para que se active apenas sea 10% visible
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log('✅ Contador visible, animando:', entry.target);
         animateCounter(entry.target);
         observer.unobserve(entry.target);
       }
     });
-  }, { 
-    threshold: 0.1, 
-    rootMargin: '0px 0px -50px 0px' 
-  });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   counters.forEach(counter => observer.observe(counter));
 }
@@ -219,7 +220,6 @@ function initContactForm() {
   if (!form) return;
 
   const telefonoInput = document.getElementById('telefono');
-
   if (telefonoInput) {
     telefonoInput.addEventListener('input', function(e) {
       let value = e.target.value.replace(/[^0-9]/g, '');
@@ -295,8 +295,10 @@ function initContactForm() {
 
       if (response.ok) {
         form.classList.add('submitted');
-        successMessage.classList.remove('d-none');
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (successMessage) {
+          successMessage.classList.remove('d-none');
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         form.reset();
         form.classList.remove('was-validated');
       } else {
@@ -408,13 +410,13 @@ function showToast(message, type = 'info') {
 
   toastBody.textContent = message;
   const header = toastEl.querySelector('.toast-header');
-  header.classList.remove('bg-primary', 'bg-success', 'bg-warning', 'bg-danger');
+  header.classList.remove('bg-primary', 'bg-success', 'bg-warning', 'bg-danger', 'text-white');
   
   switch(type) {
-    case 'success': header.classList.add('bg-success'); break;
-    case 'warning': header.classList.add('bg-warning'); header.classList.remove('text-white'); break;
-    case 'error': header.classList.add('bg-danger'); break;
-    default: header.classList.add('bg-primary');
+    case 'success': header.classList.add('bg-success', 'text-white'); break;
+    case 'warning': header.classList.add('bg-warning'); break;
+    case 'error': header.classList.add('bg-danger', 'text-white'); break;
+    default: header.classList.add('bg-primary', 'text-white');
   }
 
   const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
@@ -422,19 +424,7 @@ function showToast(message, type = 'info') {
 }
 
 // ==========================================
-// 13. FUNCIONALIDAD DE PESTAÑAS (TABS) - ¡ESTA FALTABA!
-// ==========================================
-function initTabs() {
-  const tabButtons = document.querySelectorAll('.nav-link[data-bs-toggle="pill"]');
-  // Nota: Bootstrap maneja esto nativamente con data-bs-toggle="pill", 
-  // pero esta función asegura compatibilidad si usas clases personalizadas.
-  if (tabButtons.length === 0) return;
-  
-  // Bootstrap ya hace el trabajo pesado, pero podemos agregar animaciones extra aquí si se desea.
-}
-
-// ==========================================
-// 14. MASCOTA ANIMADA EN NAVBAR
+// 13. MASCOTA ANIMADA EN NAVBAR
 // ==========================================
 function initNavMascot() {
   const video = document.getElementById('cecyto-nav-video');
@@ -453,69 +443,3 @@ function initNavMascot() {
   };
   playVideo();
 }
-
-// ==========================================
-// EXPORTACIÓN
-// ==========================================
-export {
-  initNavbar, initBackToTop, initSmoothScroll, initCounters,
-  initGalleryFilter, initLightbox, initContactForm, initDarkMode,
-  initScrollAnimations, initLazyLoad, initTooltips, showToast, initNavMascot
-};
-
-
-// Cerrar el offcanvas al hacer click en un enlace
-document.querySelectorAll('#mobileMenuOffcanvas .nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenuOffcanvas'));
-    if (offcanvas) {
-      offcanvas.hide();
-    }
-  });
-});
-
-
-// ==========================================
-// CERRAR MENÚ MÓVIL AL HACER CLIC EN UN ENLACE
-// ==========================================
-
-// Cerrar menú al hacer click en un enlace normal
-document.querySelectorAll('#navbarMenu .nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
-    if (navbarCollapse && window.innerWidth < 992) {
-      navbarCollapse.hide();
-    }
-  });
-});
-
-// ==========================================
-// CERRAR MENÚ MÓVIL AL HACER CLIC EN UN ENLACE
-// ==========================================
-
-// 1. Cerrar menú al hacer click en un enlace normal (EXCLUYENDO el dropdown-toggle)
-document.querySelectorAll('#navbarMenu .nav-link:not(.dropdown-toggle)').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
-    if (navbarCollapse && window.innerWidth < 992) {
-      navbarCollapse.hide();
-    }
-  });
-});
-
-// 2. Cerrar menú al hacer click en un dropdown-item (con un pequeño delay)
-document.querySelectorAll('#navbarMenu .dropdown-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
-    if (navbarCollapse && window.innerWidth < 992) {
-      setTimeout(() => navbarCollapse.hide(), 300);
-    }
-  });
-});
-
-// 3. PREVENIR que el botón "Oferta Educativa" cierre el menú al abrirse
-document.querySelectorAll('#navbarMenu .dropdown-toggle').forEach(toggle => {
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation(); // Esto evita que el clic se propague y cierre el menú
-  });
-});
