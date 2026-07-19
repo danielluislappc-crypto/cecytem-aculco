@@ -2921,3 +2921,37 @@ body.dark-mode .dropdown-menu-dark {
     margin-right: 0;
   }
 }
+/* ===================================================
+   ESPACIADO ENTRE LOGO Y MENÚ - DESKTOP/LAPTOP
+   =================================================== */
+
+@media (min-width: 992px) {
+  /* Aumentar espacio entre el brand y el menú */
+  .navbar-brand {
+    margin-right: 3rem !important; /* Aumenta este valor si necesitas más espacio */
+  }
+  
+  /* Espacio adicional entre items del menú */
+  .navbar-nav .nav-item {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
+  
+  /* Ajustar el contenedor del navbar */
+  #mainNavbar .container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  /* Espacio específico para el botón de modo oscuro */
+  #darkModeToggle {
+    margin-left: 2rem !important;
+  }
+}
+
+/* Si necesitas AÚN MÁS espacio, ajusta estos valores: */
+@media (min-width: 1200px) {
+  .navbar-brand {
+    margin-right: 4rem !important; /* Más espacio en pantallas grandes */
+  }
+}
