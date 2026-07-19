@@ -3343,3 +3343,37 @@ html, body {
     color: #ffffff !important;
   }
 }
+
+/* ===================================================
+   CIERRE SUAVE Y SINCRONIZADO DEL MENÚ MÓVIL
+   (Funciona tanto con el botón hamburguesa como con las opciones)
+   =================================================== */
+
+@media (max-width: 991.98px) {
+  /* Contenedor del menú: transición suave */
+  .navbar-collapse {
+    transition: all 0.3s ease-in-out !important;
+    opacity: 1;
+  }
+
+  /* Cuando Bootstrap está en proceso de cerrar (clase .collapsing) */
+  .navbar-collapse.collapsing {
+    opacity: 0 !important;
+    transition: all 0.2s ease-in-out !important;
+  }
+
+  /* Las letras se desvanecen al mismo tiempo que el fondo */
+  .navbar-collapse .nav-link,
+  .navbar-collapse .dropdown-item,
+  .navbar-collapse .dropdown-menu {
+    transition: opacity 0.2s ease-in-out !important;
+    opacity: 1;
+  }
+
+  /* Cuando se está cerrando, las letras también se desvanecen */
+  .navbar-collapse.collapsing .nav-link,
+  .navbar-collapse.collapsing .dropdown-item,
+  .navbar-collapse.collapsing .dropdown-menu {
+    opacity: 0 !important;
+  }
+}

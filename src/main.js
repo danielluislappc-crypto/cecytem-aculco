@@ -68,7 +68,7 @@ function initNavbar() {
         if (navCollapse.classList.contains('show')) {
           const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
           if (bsCollapse) {
-            setTimeout(() => bsCollapse.hide(), 250);
+            setTimeout(() => bsCollapse.hide(), 100);
           }
         }
       });
@@ -82,7 +82,7 @@ function initNavbar() {
           const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
           if (bsCollapse) {
             // 300ms de delay para que el cierre se sienta suave y natural
-            setTimeout(() => bsCollapse.hide(), 300);
+            setTimeout(() => bsCollapse.hide(), 100);
           }
         }
       });
