@@ -462,3 +462,14 @@ export {
   initGalleryFilter, initLightbox, initContactForm, initDarkMode,
   initScrollAnimations, initLazyLoad, initTooltips, showToast, initNavMascot
 };
+
+
+// Cerrar el offcanvas al hacer click en un enlace
+document.querySelectorAll('#mobileMenuOffcanvas .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenuOffcanvas'));
+    if (offcanvas) {
+      offcanvas.hide();
+    }
+  });
+});
