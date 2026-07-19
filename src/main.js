@@ -489,12 +489,33 @@ document.querySelectorAll('#navbarMenu .nav-link').forEach(link => {
   });
 });
 
-// Cerrar menú al hacer click en un elemento del dropdown
+// ==========================================
+// CERRAR MENÚ MÓVIL AL HACER CLIC EN UN ENLACE
+// ==========================================
+
+// 1. Cerrar menú al hacer click en un enlace normal (EXCLUYENDO el dropdown-toggle)
+document.querySelectorAll('#navbarMenu .nav-link:not(.dropdown-toggle)').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
+    if (navbarCollapse && window.innerWidth < 992) {
+      navbarCollapse.hide();
+    }
+  });
+});
+
+// 2. Cerrar menú al hacer click en un dropdown-item (con un pequeño delay)
 document.querySelectorAll('#navbarMenu .dropdown-item').forEach(item => {
   item.addEventListener('click', () => {
     const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
     if (navbarCollapse && window.innerWidth < 992) {
-      setTimeout(() => navbarCollapse.hide(), 200);
+      setTimeout(() => navbarCollapse.hide(), 300);
     }
+  });
+});
+
+// 3. PREVENIR que el botón "Oferta Educativa" cierre el menú al abrirse
+document.querySelectorAll('#navbarMenu .dropdown-toggle').forEach(toggle => {
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Esto evita que el clic se propague y cierre el menú
   });
 });
