@@ -22,6 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 // 1. NAVBAR CON EFECTO SCROLL Y DROPDOWN MÓVIL CORREGIDO
 // ==========================================
+// ==========================================
+// 2. BOTÓN VOLVER ARRIBA
+// ==========================================
+function initBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) {
+    console.warn('⚠️ Botón backToTop no encontrado en el HTML');
+    return;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 function initNavbar() {
   const navbar = document.getElementById('mainNavbar');
   if (!navbar) return;
