@@ -3030,4 +3030,54 @@ body.dark-mode .dropdown-menu-dark {
   margin-left: 0.5rem;
   font-size: 0.8em;
 }
+/* ===================================================
+   DROPDOWN EN MÓVIL - ESTILO SIMILAR A DESKTOP
+   =================================================== */
 
+@media (max-width: 991.98px) {
+  /* Hacer el dropdown más ancho y centrado */
+  .navbar-nav .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 0.5rem auto !important; /* Centrado horizontal */
+    left: 50% !important;
+    margin-left: -50% !important; /* Truco para centrar */
+    background-color: rgba(36, 59, 107, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Items del dropdown más espaciados */
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.95) !important;
+    padding: 0.85rem 1.25rem !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    margin: 0.4rem 0 !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    transform: translateY(-2px);
+  }
+  
+  /* Flecha del dropdown */
+  .dropdown-toggle::after {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+}
