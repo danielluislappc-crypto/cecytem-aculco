@@ -2707,3 +2707,94 @@ body.dark-mode .navbar-collapse {
 body.dark-mode .dropdown-menu-dark {
   background-color: rgba(0, 0, 0, 0.4);
 }
+
+/* ===================================================
+   VIDEO DE LA MASCOTA - RESPONSIVE
+   Visible en todos los dispositivos
+   =================================================== */
+
+/* Desktop (> 1200px) */
+.navbar-mascot-video {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Laptop (992px - 1199px) */
+@media (max-width: 1199.98px) {
+  .navbar-mascot-video {
+    height: 45px;
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991.98px) {
+  .navbar-mascot-video {
+    height: 40px;
+    margin-right: 5px;
+  }
+}
+
+/* Móvil grande (576px - 767px) */
+@media (max-width: 767.98px) {
+  .navbar-mascot-video {
+    height: 35px;
+    margin-right: 4px;
+  }
+}
+
+/* Móvil pequeño (< 576px) */
+@media (max-width: 575.98px) {
+  .navbar-mascot-video {
+    height: 30px;
+    margin-right: 3px;
+  }
+}
+
+/* Móvil muy pequeño (< 380px) */
+@media (max-width: 375px) {
+  .navbar-mascot-video {
+    height: 28px;
+    margin-right: 2px;
+  }
+  
+  /* Ajustar el brand completo en pantallas muy pequeñas */
+  .navbar-brand {
+    max-width: 75%;
+  }
+  
+  .brand-title {
+    font-size: 0.85rem;
+  }
+}
+/* ===================================================
+   AJUSTE FINAL DEL CONTENEDOR DEL BRAND (LOGO + VIDEO + TEXTO)
+   =================================================== */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 70%;
+  overflow: hidden;
+}
+
+.brand-text {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brand-title {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-subtitle {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
