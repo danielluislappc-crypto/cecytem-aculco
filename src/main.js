@@ -473,3 +473,28 @@ document.querySelectorAll('#mobileMenuOffcanvas .nav-link').forEach(link => {
     }
   });
 });
+
+
+// ==========================================
+// CERRAR MENÚ MÓVIL AL HACER CLIC EN UN ENLACE
+// ==========================================
+
+// Cerrar menú al hacer click en un enlace normal
+document.querySelectorAll('#navbarMenu .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
+    if (navbarCollapse && window.innerWidth < 992) {
+      navbarCollapse.hide();
+    }
+  });
+});
+
+// Cerrar menú al hacer click en un elemento del dropdown
+document.querySelectorAll('#navbarMenu .dropdown-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const navbarCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarMenu'));
+    if (navbarCollapse && window.innerWidth < 992) {
+      setTimeout(() => navbarCollapse.hide(), 200);
+    }
+  });
+});

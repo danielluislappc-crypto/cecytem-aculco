@@ -2362,3 +2362,348 @@ html, body {
   width: 1.5em;
   height: 1.5em;
 }
+
+/* ===================================================
+   NAVBAR RESPONSIVA INTELIGENTE
+   Se adapta automáticamente a cada pantalla
+   =================================================== */
+
+/* Navbar base */
+#mainNavbar {
+  background-color: var(--color-primary);
+  transition: all var(--transition-normal);
+  padding: 0.5rem 0;
+  min-height: 70px;
+}
+
+#mainNavbar.scrolled {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+  padding: 0.3rem 0;
+  min-height: 60px;
+}
+
+/* Logo y Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 60%;
+  overflow: hidden;
+}
+
+.navbar-logo {
+  height: 45px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Video de la mascota */
+.navbar-mascot-video {
+  height: 45px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0; /* Permite que el texto se encoja */
+}
+
+.brand-title {
+  font-size: 1.1rem;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+  border: none !important;
+  padding: 0.5rem 0.75rem !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  transform: scale(1.05);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3) !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Menú desplegado en móvil */
+.navbar-collapse {
+  background-color: var(--color-primary-dark);
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Links del menú */
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 0.7rem 1rem !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Dropdown */
+.dropdown-menu-dark {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* Botón modo oscuro */
+#darkModeToggle {
+  width: 40px;
+  height: 40px;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#darkModeToggle:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS INTELIGENTES
+   =================================================== */
+
+/* Desktop grande (> 1200px) - Todo visible */
+@media (min-width: 1200px) {
+  .navbar-logo {
+    height: 50px;
+  }
+  
+  .navbar-mascot-video {
+    height: 50px;
+  }
+  
+  .brand-title {
+    font-size: 1.2rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Desktop (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-logo {
+    height: 45px;
+  }
+  
+  .navbar-mascot-video {
+    height: 45px;
+  }
+  
+  .brand-title {
+    font-size: 1rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0.8rem !important;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet (768px - 991px) - Menú hamburguesa, video oculto */
+@media (max-width: 991.98px) {
+  .navbar-brand {
+    max-width: 70%;
+  }
+  
+  .navbar-logo {
+    height: 40px;
+  }
+  
+  /* Video oculto en tablet y móvil */
+  .navbar-mascot-video {
+    display: none !important;
+  }
+  
+  .brand-title {
+    font-size: 1rem;
+  }
+  
+  .brand-subtitle {
+    display: none !important; /* Ocultar en tablet para ahorrar espacio */
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.8rem 1rem !important;
+    font-size: 1rem;
+  }
+  
+  /* Dropdown en móvil */
+  .dropdown-menu-dark {
+    margin-left: 1rem;
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Móvil grande (576px - 767px) */
+@media (max-width: 767.98px) {
+  .navbar-brand {
+    max-width: 75%;
+  }
+  
+  .navbar-logo {
+    height: 35px;
+  }
+  
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  
+  .navbar-collapse {
+    padding: 0.75rem;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.7rem 0.9rem !important;
+    font-size: 0.95rem;
+  }
+}
+
+/* Móvil pequeño (< 576px) */
+@media (max-width: 575.98px) {
+  .navbar-brand {
+    max-width: 80%;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+  }
+  
+  .brand-title {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.4rem 0.6rem !important;
+  }
+  
+  .navbar-collapse {
+    padding: 0.5rem;
+    margin-top: 8px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 0.9rem;
+  }
+  
+  /* Botón modo oscuro más pequeño */
+  #darkModeToggle {
+    width: 35px;
+    height: 35px;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Móvil muy pequeño (< 380px) */
+@media (max-width: 375px) {
+  .navbar-brand {
+    max-width: 85%;
+  }
+  
+  .navbar-logo {
+    height: 30px;
+  }
+  
+  .brand-title {
+    font-size: 0.85rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.35rem 0.5rem !important;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0.7rem !important;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ajustes para modo oscuro en navbar */
+body.dark-mode #mainNavbar {
+  background-color: #1a1d2e;
+}
+
+body.dark-mode #mainNavbar.scrolled {
+  background-color: #0f111a;
+}
+
+body.dark-mode .navbar-collapse {
+  background-color: #232738;
+}
+
+body.dark-mode .dropdown-menu-dark {
+  background-color: rgba(0, 0, 0, 0.4);
+}
